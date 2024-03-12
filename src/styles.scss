@@ -1,1 +1,123 @@
 /* You can add global styles to this file, and also import other style files */
+$radical-red: #FF2C52;
+$alice-blue: #F0FAFF;
+$placeHolder : #0533544D;
+$prussian-blue:#053354;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.wrapper{
+    max-width: 1620px;
+    margin: 0 auto;
+}
+
+input{
+    border-radius: 50px;
+    border: none;
+}
+input::placeholder{
+    font-size: 14px;
+    font-weight: 400;
+    color: $placeHolder;
+}
+button{
+   background-color: $prussian-blue;
+   color: white;
+   border:none;
+   border-radius: 50%;
+   cursor: pointer;
+}
+hr{
+    color:#ECF2F84D;
+}
+li{
+    list-style: none;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 27px;
+    nav{
+        ul{
+            display: flex;
+            align-items: center;
+            gap:36px;
+        }
+        li{
+            border-bottom: 1px solid #ECF2F8;
+            font-size: 18px;
+            font-weight: 400;
+            
+        }
+    }
+}
+
+
+
+.logo{
+    display: flex;
+    align-items: center;
+    span{
+        margin-left: -24px;
+        font-size: 22px;
+        color:$radical-red;
+        font-weight: 500;
+    }
+}
+
+.auth{
+    background-color: $alice-blue;
+    border-radius: 25px;
+    padding: 11px 25px;
+    display: inline-block;
+}
+.local{
+    background-color: $alice-blue;
+    font-size: 16px;
+    padding: 13px 26px;
+    border-radius: 25px;
+    font-weight: 400;
+}
+.search{
+    background-color: #18A4E180;
+display: flex;
+form{
+    display: flex;
+    button{
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+}
+}
+footer{
+    background-color: $prussian-blue;
+    color: white;
+    padding-block:51px 55px;
+    .wrapper{
+    display: flex;
+    }
+    .container{
+        display: grid;
+        grid-template-columns: repeat(1, auto);
+        column-gap: 20px;
+    }
+    nav, .menu {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* Adjust the number of columns as per your design */
+        row-gap: 10px;
+      }
+      hr{
+        margin-block: 20px;
+      }
+      ul{
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+      }
+}
