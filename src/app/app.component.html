@@ -58,8 +58,11 @@
   </div>
 </div>
 <router-outlet></router-outlet>
-<app-doctor-card></app-doctor-card>
-<app-modal (closeModal)="isModalVisible = $event" [isVisible]="isModalVisible"></app-modal>
+
+<app-modal
+  (closeModal)="isModalVisible = $event"
+  [isVisible]="isModalVisible"
+></app-modal>
 
 <footer>
   <div class="wrapper">
@@ -107,4 +110,9 @@
     </div>
   </div>
 </footer>
-<div style="padding-block: 10px; background-color: white">copyright</div>
+<div
+  style="padding-block: 10px; background-color: white; font-size: 14px"
+  class="wrapper"
+>
+  copyright
+</div>

@@ -1,11 +1,11 @@
 <div class="modal" [class.show]="isVisible">
-  <div class="modal-content">
+  <form class="modal-content">
     <p>ავტორიზაცია</p>
     <div class="form-group">
       <input type="text" placeholder="ელ. ფოსტა/ ტელეფონის ნომერი" />
       <input type="password" placeholder="პაროლი" />
       <small style="text-align: end">დაგავიწყდა პაროლი?</small>
     </div>
-    <button (click)="onCloseClick()">შესვლა</button>
-  </div>
+    <button type="submit" (click)="onCloseClick()">შესვლა</button>
+  </form>
 </div>

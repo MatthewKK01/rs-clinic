@@ -11,6 +11,8 @@ export class ModalComponent {
 
   onCloseClick() {
     // Emit false when the close button is clicked
+
+
     this.closeModal.emit(false);
   }
 }

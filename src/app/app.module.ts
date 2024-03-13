@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { DoctorCardComponent } from './components/doctor-card/doctor-card.component';
 import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { ModalComponent } from './components/modal/modal.component';
     DoctorCardComponent,
     UserRegistrationComponent,
     ModalComponent,
+    HomepageComponent,
 
   ],
   imports: [
