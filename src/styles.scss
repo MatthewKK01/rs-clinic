@@ -9,7 +9,7 @@ $prussian-blue:#053354;
     box-sizing: border-box;
 }
 .wrapper{
-    max-width: 1620px;
+    min-width: 1620px;
     margin: 0 auto;
 }
 
@@ -67,7 +67,19 @@ header{
         font-weight: 500;
     }
 }
-
+.search-form{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    input{
+        width: 480px;
+        height: 50px;
+        padding-left: 30px;
+    }
+    input:focus{
+        border:#18A4E180;
+    }
+}
 .auth{
     background-color: $alice-blue;
     border-radius: 25px;
@@ -82,7 +94,8 @@ header{
     font-weight: 400;
 }
 .search{
-    background-color: #18A4E180;
+    background-color: #ECF2F8;
+    padding-block: 35px;
 display: flex;
 form{
     display: flex;
@@ -95,10 +108,24 @@ form{
     }
 }
 }
+.contact-info{
+    display: flex;
+    gap: 40px;
+    margin-right: 100px;
+    img{
+        padding: 10px;
+        background-color: white;
+        border-radius: 50%;
+    }
+    a{
+        text-decoration: none;
+        color: black;
+    }
+}
 footer{
     background-color: $prussian-blue;
     color: white;
-    padding-block:51px 55px;
+    padding-block:51px;
     .wrapper{
     display: flex;
     }

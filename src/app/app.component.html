@@ -22,10 +22,18 @@
   <span class="local">ENG</span>
 </header>
 <div class="search">
-  <div class="wrapper">
+  <div class="wrapper" style="display: flex">
     <div class="contact-info">
-      <p>Telephone: <a href="tel:+123456789">+1 (234) 567-89</a></p>
-      <p>Email: <a href="mailto:clinic@example.com">clinic@example.com</a></p>
+      <div style="display: flex; align-items: center; gap: 20px">
+        <img src="assets/call.svg" alt="" />
+
+        <a href="tel:+9950322100100">032 2 100 100</a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 20px">
+        <img src="assets/location.svg" alt="" />
+
+        <span>იაკობ ნიკოლაძე №10</span>
+      </div>
     </div>
 
     <form class="search-form">
@@ -43,13 +51,14 @@
         placeholder="Enter specialization"
       />
 
-      <button type="submit">
+      <button class="icon" type="submit">
         <img src="assets/ri_search-line.svg" alt="" />
       </button>
     </form>
   </div>
 </div>
 <router-outlet></router-outlet>
+<app-doctor-card></app-doctor-card>
 <footer>
   <div class="wrapper">
     <div class="logo" style="flex-grow: 1">
