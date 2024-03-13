@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'rs-clinic';
+  isModalVisible: boolean = false;
+  
+
+  openModal(): void {
+    this.isModalVisible = true;
+  }
+
+  
 }

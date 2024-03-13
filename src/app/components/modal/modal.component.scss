@@ -1,0 +1,51 @@
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    min-height: 100vh;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  p{
+    color: #18A4E1;
+    font-size: 26px;
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #888;
+    width: 600px;
+    height: 450px;
+    padding-inline: 112px;
+    padding-block: 66px 89px;
+  }
+  small{
+    color: #053354;
+  }
+  .modal.show {
+    display: block;
+  }
+  input{
+    border: 1px solid #EBF2F8;
+    width: 100%;
+    height: 48px;
+    padding-left: 20px;
+  }
+  .form-group{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-block: 44px;
+  }
+  button{
+    padding: 10px 60px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 50px;
+  }
