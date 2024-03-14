@@ -1,0 +1,119 @@
+.clinic-img{
+    position: relative;
+    height: 600px;
+    width: 1900px;
+    overflow: hidden;
+    img{
+        object-fit: contain;
+    }
+}
+
+.rectangle{
+    border-radius: 0 50px 50px 0;
+    background-color: #05335440;
+    position: absolute;
+    top: 0;
+    padding-block:184px;
+    padding-inline: 150px 261px;
+    height: 100%;
+    backdrop-filter: blur(1.5px);
+}
+h1{
+    font-size: 48px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 42px;
+}
+.address{
+    width: 370px;
+    height: 65px;
+    background-color: white;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 12px;
+    span{
+        font-size: 22px;
+    }
+}
+
+.categories{
+    background-color: white;
+    border: 1px solid #ECF2F8;
+    width: 350px;
+    padding-block: 30px ;
+    box-shadow: 0px 4px 50px 0px #0533540D;
+border-radius: 10px;
+    .title{
+        margin-bottom: 14px;
+        font-size: 18px;
+        text-align: center;
+        font-weight: 500;
+    }
+    ul{
+        padding-block: 17px 43px;
+    }
+    li{
+        cursor: pointer;
+        height: 40px;
+        font-size: 16px;
+        font-weight: 400;
+        color: #053354;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        position: relative;
+        padding-left: 104px;
+        span{
+            position: absolute;
+            top: 50%;
+            left: 40px;
+            transform:translateY(-50%);
+        }
+        img{
+            position: absolute;
+            top: 50%;
+            right: 45px;
+            transform:translateY(-50%);
+
+        }
+    }
+    li:hover{
+        background-color: #ECF2F880;
+    }
+}
+ /* Initially hide the arrow */
+ ul li img {
+    opacity: 0;
+
+  }
+  hr{
+    width: 250px;
+    margin-inline: auto;
+  }
+
+  /* Show the arrow on hover */
+  ul li:hover img {
+    opacity: 1;
+  }
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+section{
+    display: flex;
+    gap: 60px;
+    padding-block: 73px 105px;
+}
+.view-more{
+    color: #18A4E1;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 13px;
+    img{
+        transform: rotate(90deg);
+    }
+}
