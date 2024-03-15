@@ -1,1 +1,43 @@
-<p>doctor-registration works!</p>
+<form class="wrapper" action="">
+  <p>რეგისტრაცია</p>
+  <div class="input-group">
+    <div class="form-group">
+      <label for="">სახელი</label>
+      <input type="text" placeholder="( მინიმუმ 5 სიმბოლო )" />
+    </div>
+    <div class="form-group">
+      <label for="">email</label>
+      <input type="email" />
+    </div>
+    <div class="form-group">
+      <label for="">piradi nomeri</label>
+      <input type="number" placeholder="00000000000" />
+    </div>
+    <div class="form-group">
+      <div><label for="">gvari</label></div>
+      <input type="text" />
+    </div>
+
+    <div class="form-group">
+      <label for="">paroli</label>
+      <input type="password" placeholder="( მინიმუმ 8 სიმბოლო : @ 7 , )" />
+    </div>
+    <div class="form-group">
+      <label for="">kategoria</label>
+      <input type="text" placeholder="( მინიმუმ 8 სიმბოლო : @ 7 , )" />
+    </div>
+    <div style="position: relative; width: 480px">
+      <span for="">fotosurati</span>
+      <img src="assets/img.svg" class="icon" alt="" />
+      <label class="form-group-file" for="image"></label>
+      <input type="file" name="image" id="image" hidden />
+    </div>
+    <div style="position: relative; width: 480px">
+      <label for="">cv</label>
+      <label for="cv" class="form-group-file"> </label>
+      <img class="icon" src="assets/doc.svg" alt="" />
+      <input name="cv" id="cv" type="file" hidden />
+    </div>
+    <button type="submit">auth</button>
+  </div>
+</form>

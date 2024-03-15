@@ -1,0 +1,53 @@
+input{
+    border: 1px solid #ECF2F8;
+    width: 480px;
+    height: 50px;
+    padding-left: 20px;
+    outline: none;
+    &:focus{
+        outline: 1px solid #18A4E14D;
+    }
+}
+
+.input-group {  display: inline-grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto  ;
+    gap: 30px 40px;
+    grid-auto-flow: row;
+  }
+.icon{
+    position: absolute;
+    top: 50%;
+    right: 20px;
+}
+    
+  .form-group-file {
+    @extend input;
+    border-radius: 50px;
+    display: block;
+    &:focus{
+        outline: 1px solid #18A4E14D;
+    }
+  }
+button{
+    justify-self: end;
+    align-self: flex-end;
+    height: 50px;
+    width: 180px;
+    color: white;
+    border-radius: 50px;
+
+}
+form{
+    padding-block:60px 125px;
+}
+p{
+    color: #18A4E1;
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 31px;
+}
+.form-group{
+    display: flex;
+    flex-direction: column;
+}
