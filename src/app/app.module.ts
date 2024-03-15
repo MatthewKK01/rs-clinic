@@ -7,7 +7,9 @@ import { DoctorCardComponent } from './components/doctor-card/doctor-card.compon
 import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
-
+import { DoctorRegistrationComponent } from './components/doctor-registration/doctor-registration.component';
+import { NgxStarRatingModule } from 'ngx-star-rating';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { HomepageComponent } from './components/homepage/homepage.component';
     UserRegistrationComponent,
     ModalComponent,
     HomepageComponent,
-
+    DoctorRegistrationComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxStarRatingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
