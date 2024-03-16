@@ -10,7 +10,8 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { DoctorRegistrationComponent } from './components/doctor-registration/doctor-registration.component';
 import { NgxStarRatingModule } from 'ngx-star-rating';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
+import { DoctorAppointmentsComponent } from './doctor-appointments/doctor-appointments.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,12 +20,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     ModalComponent,
     HomepageComponent,
     DoctorRegistrationComponent,
+    DoctorAppointmentsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgxStarRatingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

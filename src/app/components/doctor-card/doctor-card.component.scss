@@ -80,4 +80,8 @@ button:hover{
   font-size: 20px !important;
     transform: none !important;
     color: #FFD233 !important;
+    &::before{
+        text-shadow: none !important;
+        color: #FFD233 !important;
+    }
 }

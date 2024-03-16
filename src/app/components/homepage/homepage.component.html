@@ -65,8 +65,8 @@
     </p>
   </div>
   <article class="cards">
-    <app-doctor-card></app-doctor-card>
-    <app-doctor-card></app-doctor-card>
-    <app-doctor-card></app-doctor-card>
+    <ng-container *ngFor="let doctor of docList"
+      ><app-doctor-card [myDoctor]="doctor"></app-doctor-card
+    ></ng-container>
   </article>
 </section>

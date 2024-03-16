@@ -25,9 +25,9 @@
     </svg>
   </div>
   <div style="display: flex; flex-direction: column; align-items: center">
-    <div class="avatar"><img src="assets/man.jpg" alt="" /></div>
-    <p class="fullname">გიორგი ხორავა</p>
-    <p class="specialize">კარდიოლოგი/არითმოლოგი</p>
+    <div class="avatar"><img [src]="myDoctor.image" alt="" /></div>
+    <p class="fullname">{{ myDoctor.fullname }}</p>
+    <p class="specialize">{{ myDoctor.doctor_specialties }}</p>
     <form [formGroup]="myForm">
       <ngx-star-rating
         formControlName="rating"
@@ -35,6 +35,6 @@
         [disabled]="true"
       ></ngx-star-rating>
     </form>
-    <button>მიღებაზე ჩაწერა</button>
+    <button [routerLink]="['doctors', myDoctor.id]">მიღებაზე ჩაწერა</button>
   </div>
 </div>
