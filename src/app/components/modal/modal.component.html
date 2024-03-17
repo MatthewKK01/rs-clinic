@@ -1,11 +1,21 @@
 <div class="modal" [class.show]="isVisible">
-  <form class="modal-content">
+  <form class="modal-content" [formGroup]="loginForm">
     <p>ავტორიზაცია</p>
     <div class="form-group">
-      <input type="text" placeholder="ელ. ფოსტა/ ტელეფონის ნომერი" />
-      <input type="password" placeholder="პაროლი" />
+      <input
+        formControlName="email"
+        type="text"
+        placeholder="ელ. ფოსტა/ ტელეფონის ნომერი"
+      />
+      <input formControlName="password" type="password" placeholder="პაროლი" />
       <small style="text-align: end">დაგავიწყდა პაროლი?</small>
     </div>
-    <button type="submit" (click)="onCloseClick()">შესვლა</button>
+    <button
+      type="submit"
+      [disabled]="!loginForm.valid"
+      (click)="onCloseClick()"
+    >
+      შესვლა
+    </button>
   </form>
 </div>

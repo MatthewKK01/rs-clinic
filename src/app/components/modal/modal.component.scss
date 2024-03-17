@@ -31,6 +31,7 @@
   .modal.show {
     display: block;
   }
+
   input{
     border: 1px solid #EBF2F8;
     width: 100%;
@@ -48,4 +49,7 @@
     font-size: 16px;
     font-weight: 500;
     border-radius: 50px;
+    &:disabled{
+      background-color: #05335450;
+    }
   }
