@@ -2,16 +2,18 @@ input{
     border: 1px solid #ECF2F8;
     width: 480px;
     height: 50px;
-    padding-left: 20px;
+    padding-inline: 20px;
 }
-.input-group {  display: grid;
-    grid-template-columns: auto auto auto;
+.input-group {  
+    display: inline-grid;
+    grid-template-columns: repeat(3,1fr); /* Adjust column sizes as needed */
     grid-template-rows: auto auto  ;
     gap: 30px 40px;
     grid-auto-flow: row;
+    width: 1530px;
   }
 button{
-    float: right;
+    align-self: flex-end;
     height: 50px;
     width: 180px;
     color: white;
@@ -20,10 +22,43 @@ button{
 }
 form{
     padding-block:60px 125px;
+    width: 1530px;
+    margin-left: 150px;
+    display: flex;
+  flex-direction: column;
 }
 p{
     color: #18A4E1;
     font-size: 26px;
     font-weight: 500;
     margin-bottom: 31px;
+}
+.mail{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+        position: absolute;
+        right: 35px;
+        cursor: pointer;
+    }
+}
+span{
+    color: #0533544D;
+    font-size: 16px;
+    font-weight: 400;
+    padding-right: 20px;
+}
+label{
+    padding-inline: 20px;
+}
+.form-group{
+    width: 480px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+  align-items: start;
+
 }

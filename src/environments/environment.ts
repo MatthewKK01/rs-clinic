@@ -1,4 +1,4 @@
-export const environment = {
+export const environment: any = {
     firebaseConfig: {
 
         apiKey: "AIzaSyCzM0j4--X7OMu_Nao4sELnSd8S2n2ljsE",
@@ -12,7 +12,6 @@ export const environment = {
         messagingSenderId: "389850483860",
 
         appId: "1:389850483860:web:1ec5abac7a6210b991f881"
-
     }
 
 };

@@ -1,30 +1,50 @@
-<form class="wrapper" action="">
+<form (submit)="onSubmit()" [formGroup]="userForm" action="">
   <p>რეგისტრაცია</p>
   <div class="input-group">
     <div class="form-group">
       <label for="">სახელი</label>
-      <input type="text" placeholder="( მინიმუმ 5 სიმბოლო )" />
-    </div>
-    <div class="form-group">
-      <label for="">გვარი</label>
-      <input type="text" />
+      <input
+        formControlName="userName"
+        type="text"
+        placeholder="( მინიმუმ 5 სიმბოლო )"
+      />
     </div>
     <div class="form-group">
       <label for="">ემაილი</label>
-      <input type="email" />
+      <div class="mail">
+        <input formControlName="to_email" type="email" />
+        <img src="assets/mail-arrow.svg" (click)="sendEmail()" alt="" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="">პირადი ნომერი</label>
+      <input
+        type="number"
+        formControlName="id_number"
+        placeholder="00000000000"
+      />
     </div>
     <div class="form-group">
-      <div><label for="">aqtivaciis kodi</label> <span>vada 30 wuti</span></div>
-      <input type="number" />
+      <label for="">გვარი</label>
+      <input formControlName="userSurname" type="text" />
     </div>
+
     <div class="form-group">
-      <label for="">piradi nomeri</label>
-      <input type="number" placeholder="00000000000" />
+      <div style="display: flex; justify-content: space-between; width: 100%">
+        <label for="">აქტივაციის კოდი</label> <span>ვადა 30 წუთი</span>
+      </div>
+      <input formControlName="activation_code" type="number" />
     </div>
+
     <div class="form-group">
-      <label for="">paroli</label>
-      <input type="password" placeholder="( მინიმუმ 8 სიმბოლო : @ 7 , )" />
+      <label for="">პაროლი</label>
+      <input
+        type="password"
+        formControlName="password"
+        placeholder="( მინიმუმ 8 სიმბოლო : @ 7 , )"
+      />
     </div>
   </div>
-  <button type="submit">auth</button>
+  <button type="submit">რეგისტრაცია</button>
 </form>
