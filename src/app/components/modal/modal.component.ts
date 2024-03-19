@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
 
 
 @Component({
@@ -17,13 +18,16 @@ export class ModalComponent {
     password: new FormControl("", Validators.required)
   })
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private _user: UserService) {
   }
   onCloseClick() {
-
-    console.log(this.loginForm.value);
-
     // Emit false when the close button is clicked
     this.closeModal.emit(false);
+  }
+
+  onSubmit() {
+    const { email, password } = this.loginForm.value;
+    this._user.loginUser(email, password)
+    this.onCloseClick()
   }
 }

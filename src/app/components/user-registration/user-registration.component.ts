@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import emailjs from '@emailjs/browser';
+import { IUser } from 'src/app/models/iuser';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-user-registration',
@@ -25,7 +27,7 @@ export class UserRegistrationComponent {
     activation_code: [null, Validators.required],
   })
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private _user: UserService) {
     emailjs.init("1_mrNZ5LnjFDdqjaD")
   }
 
@@ -51,16 +53,23 @@ export class UserRegistrationComponent {
     )
   }
 
-  
+
+
   onSubmit() {
     const validatedCode = this.userForm.get("activation_code").value.toString();
-    console.log(validatedCode, typeof validatedCode);
-    console.log(this.activationCode, typeof this.activationCode);
+    const { to_email, password } = this.userForm.value;
+    const userData: IUser = {
+      name: this.userForm.get('userName').value,
+      surname: this.userForm.get('userSurname').value,
+      id: this.userForm.get('id_number').value,
+      email: this.userForm.get('to_email').value,
+    }
     if (validatedCode === this.activationCode) {
-      console.log("works");
+      this._user.registerUser(to_email, password);
+      this._user.addUser(userData);
+      this.userForm.reset()
     } else {
       console.log("activation code isnot valid");
     }
-
   }
 }

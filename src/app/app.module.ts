@@ -12,7 +12,12 @@ import { NgxStarRatingModule } from 'ngx-star-rating';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DoctorAppointmentsComponent } from './doctor-appointments/doctor-appointments.component'
-import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from 'src/environments/environment.development';
+import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +34,9 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
     NgxStarRatingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AngularFireAuthModule
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    provideFirestore(() => getFirestore()),
   ],
   providers: [],
   bootstrap: [AppComponent]
