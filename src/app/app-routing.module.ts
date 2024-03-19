@@ -7,8 +7,8 @@ import { DoctorAppointmentsComponent } from './doctor-appointments/doctor-appoin
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
-  { path: 'user', component: UserRegistrationComponent },
-  { path: 'doctor', component: DoctorRegistrationComponent },
+  { path: 'newuser', component: UserRegistrationComponent },
+  { path: 'newdoctor', component: DoctorRegistrationComponent },
   { path: 'doctors/:id', component: DoctorAppointmentsComponent },
 ];
 

@@ -13,7 +13,13 @@ $prussian-blue:#053354;
     max-width: 1620px;
     margin: 0 auto;
 }
-
+a{
+    text-decoration: none;
+    color: #053354;
+}
+.active{
+    color: #18A4E1;
+}
 input{
     border-radius: 50px;
     border: none;
@@ -60,6 +66,7 @@ header{
 
 .logo{
     display: flex;
+    cursor: pointer;
     align-items: center;
     span{
         margin-left: -24px;
@@ -156,6 +163,7 @@ footer{
       }
       li{
         font-size: 16px;
+        color: white;
       }
 }
 

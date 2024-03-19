@@ -9,6 +9,8 @@ import emailjs from '@emailjs/browser';
 })
 export class UserRegistrationComponent {
 
+  activationCode: string = ""
+
   generateActivationCode(): string {
     const code = Math.floor(100000 + Math.random() * 900000).toString();
     return code;
@@ -31,12 +33,14 @@ export class UserRegistrationComponent {
   template_id: string = "template_1s44qsc";
 
   sendEmail() {
+    const generatedCode = this.generateActivationCode()
     const templateParams = {
       from_name: "კლინიკიდან",
       to_email: this.userForm.value.to_email,
-      activation_code: this.generateActivationCode(),
+      activation_code: generatedCode,
     };
 
+    this.activationCode = generatedCode;
 
     emailjs.send(this.service_id, this.template_id, templateParams).then((result) => {
       alert("აქტივაციის კოდი გაგზავნილია,კოდის გამოყენების ვადაა 2 წუთი");
@@ -46,7 +50,17 @@ export class UserRegistrationComponent {
     }
     )
   }
+
+  
   onSubmit() {
+    const validatedCode = this.userForm.get("activation_code").value.toString();
+    console.log(validatedCode, typeof validatedCode);
+    console.log(this.activationCode, typeof this.activationCode);
+    if (validatedCode === this.activationCode) {
+      console.log("works");
+    } else {
+      console.log("activation code isnot valid");
+    }
 
   }
 }

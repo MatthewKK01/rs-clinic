@@ -1,5 +1,5 @@
 <header class="wrapper">
-  <div class="logo">
+  <div routerLink="/" class="logo">
     <img src="assets/logo.svg" alt="" />
     <span>კლინიკა</span>
   </div>
@@ -15,9 +15,9 @@
     </ul>
   </nav>
   <div class="auth">
-    <a (click)="openModal()">ავტორიზაცია</a>
+    <a [class.active]="isModalVisible" (click)="openModal()">ავტორიზაცია</a>
     /
-    <a>რეგისტრაცია</a>
+    <a routerLink="newuser" routerLinkActive="active">რეგისტრაცია</a>
   </div>
   <span class="local">ENG</span>
 </header>
