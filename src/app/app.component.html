@@ -14,11 +14,17 @@
       <li>კონტაქტი</li>
     </ul>
   </nav>
-  <div class="auth">
-    <a [class.active]="isModalVisible" (click)="openModal()">ავტორიზაცია</a>
-    /
-    <a routerLink="newuser" routerLinkActive="active">რეგისტრაცია</a>
+  <div *ngIf="userData; else notLoggedIn">
+    <!-- Render content for logged-in users -->
+    <p>Welcome, {{ userData.name }}</p>
   </div>
+  <ng-template #notLoggedIn>
+    <div class="auth">
+      <a [class.active]="isModalVisible" (click)="openModal()">ავტორიზაცია</a>
+      /
+      <a routerLink="newuser" routerLinkActive="active">რეგისტრაცია</a>
+    </div>
+  </ng-template>
   <span class="local">ENG</span>
 </header>
 <div class="search">

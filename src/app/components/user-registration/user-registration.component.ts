@@ -65,11 +65,9 @@ export class UserRegistrationComponent {
       id_number: this.userForm.get('id_number').value,
       email: this.userForm.get('to_email').value,
     }
-
-
+    
     if (validatedCode === this.activationCode) {
-      this._user.registerUser(to_email, password);
-      this._user.addUser(userData);
+      this._user.registerUser(to_email, password, userData);
       this.userForm.reset()
     } else {
       console.log("activation code isnot valid");
