@@ -3,14 +3,18 @@ import { RouterModule, Routes } from '@angular/router';
 import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { DoctorRegistrationComponent } from './components/doctor-registration/doctor-registration.component';
-import { DoctorAppointmentsComponent } from './doctor-appointments/doctor-appointments.component';
+import { DoctorAppointmentsComponent } from './components/doctor-appointments/doctor-appointments.component';
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
   { path: 'newuser', component: UserRegistrationComponent },
   { path: 'newdoctor', component: DoctorRegistrationComponent },
-  { path: 'doctors/:id', component: DoctorAppointmentsComponent },
+  { path: 'user/:id', component: DoctorAppointmentsComponent },
+  { path: 'doctor/:id', component: DoctorAppointmentsComponent },
+  { path: 'admin', component: AdminDashboardComponent },
+
 ];
 
 @NgModule({

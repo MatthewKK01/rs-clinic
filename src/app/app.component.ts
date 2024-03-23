@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from './services/user.service';
 import { IUser } from './models/iuser';
 
@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   /**
    *
    */
-  constructor(private router: Router, private _user: UserService) {
+  constructor(private router: Router, private route: ActivatedRoute, private _user: UserService) {
 
   }
 
@@ -29,6 +29,27 @@ export class AppComponent implements OnInit {
 
   openModal(): void {
     this.isModalVisible = true;
+  }
+  navigateToDashboard(userData: IUser) {
+    const { role, id } = this.userData;
+    let routePath = '';
+    switch (role) {
+      case 'user':
+        routePath = `user/${id}`;
+        break;
+      case 'doctor':
+        routePath = `doctor/${id}`;
+        break;
+      case 'admin':
+        routePath = `admin`;
+        break;
+      default:
+        routePath = '';
+        break;
+    }
+    if (routePath) {
+      this.router.navigate([routePath], { relativeTo: this.route });
+    }
   }
 
 

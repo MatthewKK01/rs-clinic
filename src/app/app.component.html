@@ -16,7 +16,10 @@
   </nav>
   <div *ngIf="userData; else notLoggedIn">
     <!-- Render content for logged-in users -->
-    <p>Welcome, {{ userData.name }}</p>
+    <div class="loggedUser">
+      <img src="/assets/user.jpg" alt="" />
+      <span (click)="navigateToDashboard(userData)">{{ userData.name }}</span>
+    </div>
   </div>
   <ng-template #notLoggedIn>
     <div class="auth">

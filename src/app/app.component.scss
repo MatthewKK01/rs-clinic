@@ -1,0 +1,16 @@
+.loggedUser{
+    background-color: #F0FAFF;
+    display: flex;
+    gap: 21px;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 5px;
+width: 210px;
+height: 45px;
+border-radius: 25px;
+    img{
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+    }
+}

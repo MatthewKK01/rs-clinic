@@ -11,12 +11,13 @@ import { DoctorRegistrationComponent } from './components/doctor-registration/do
 import { NgxStarRatingModule } from 'ngx-star-rating';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { DoctorAppointmentsComponent } from './doctor-appointments/doctor-appointments.component'
+import { DoctorAppointmentsComponent } from './components/doctor-appointments/doctor-appointments.component'
 
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment.development';
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
     HomepageComponent,
     DoctorRegistrationComponent,
     DoctorAppointmentsComponent,
+    AdminDashboardComponent,
 
   ],
   imports: [
