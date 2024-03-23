@@ -15,7 +15,7 @@ import { DoctorAppointmentsComponent } from './doctor-appointments/doctor-appoin
 
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment.development';
-import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 
 @NgModule({
@@ -27,6 +27,7 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
     HomepageComponent,
     DoctorRegistrationComponent,
     DoctorAppointmentsComponent,
+
   ],
   imports: [
     BrowserModule,

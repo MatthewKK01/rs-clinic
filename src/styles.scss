@@ -3,6 +3,23 @@ $radical-red: #FF2C52;
 $alice-blue: #F0FAFF;
 $placeHolder : #0533544D;
 $prussian-blue:#053354;
+@font-face {
+    font-family: 'FiraGo';
+    src: url('./assets/fonts/FiraGO-Regular.woff2') format('woff2'),
+    url('./assets/fonts/FiraGO-Medium.woff2') format('woff2'),;
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'FiraGo';
+    src: url('./assets/fonts/FiraGO-Medium.woff2') format('woff2'),;
+    font-weight: 500;
+    font-style: normal;
+}
+html{
+    font-family: 'FiraGo', sans-serif;
+    font-weight: 400;
+}
 *{
     margin: 0;
     padding: 0;
@@ -51,13 +68,15 @@ header{
         ul{
             display: flex;
             align-items: center;
-            gap:36px;
         }
         li{
             border-bottom: 1px solid #ECF2F8;
             font-size: 18px;
             font-weight: 400;
-            
+            padding: 20px;  
+            &:hover{
+                border-bottom: 1px solid #18A4E1;
+            }
         }
     }
 }

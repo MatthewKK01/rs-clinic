@@ -59,11 +59,14 @@ export class UserRegistrationComponent {
     const validatedCode = this.userForm.get("activation_code").value.toString();
     const { to_email, password } = this.userForm.value;
     const userData: IUser = {
+      role: "user",
       name: this.userForm.get('userName').value,
       surname: this.userForm.get('userSurname').value,
-      id: this.userForm.get('id_number').value,
+      id_number: this.userForm.get('id_number').value,
       email: this.userForm.get('to_email').value,
     }
+
+
     if (validatedCode === this.activationCode) {
       this._user.registerUser(to_email, password);
       this._user.addUser(userData);

@@ -5,6 +5,7 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { DoctorRegistrationComponent } from './components/doctor-registration/doctor-registration.component';
 import { DoctorAppointmentsComponent } from './doctor-appointments/doctor-appointments.component';
 
+
 const routes: Routes = [
   { path: '', component: HomepageComponent },
   { path: 'newuser', component: UserRegistrationComponent },
