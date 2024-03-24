@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'newuser', component: UserRegistrationComponent },
   { path: 'newdoctor', component: DoctorRegistrationComponent },
   { path: 'user/:id', component: DoctorAppointmentsComponent },
-  { path: 'doctor/:id', component: DoctorAppointmentsComponent },
+  { path: 'doctor/:name', component: DoctorAppointmentsComponent },
   { path: 'admin', component: AdminDashboardComponent },
 
 ];

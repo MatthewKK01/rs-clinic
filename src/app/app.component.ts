@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from './services/user.service';
 import { IUser } from './models/iuser';
+import { DoctorsService } from './services/doctors.service';
 
 @Component({
   selector: 'app-root',
@@ -11,12 +12,11 @@ import { IUser } from './models/iuser';
 export class AppComponent implements OnInit {
   title = 'rs-clinic';
   isModalVisible: boolean = false;
-  userData: IUser = undefined;
+  userData!: IUser;
+  name: string = '';
+  category: string = '';
 
-  /**
-   *
-   */
-  constructor(private router: Router, private route: ActivatedRoute, private _user: UserService) {
+  constructor(private router: Router, private route: ActivatedRoute, private _user: UserService, private _doc: DoctorsService) {
 
   }
 
@@ -50,6 +50,9 @@ export class AppComponent implements OnInit {
     if (routePath) {
       this.router.navigate([routePath], { relativeTo: this.route });
     }
+  }
+  updateSearchCriteria() {
+    this._doc.setSearchCriteria(this.name, this.category);
   }
 
 

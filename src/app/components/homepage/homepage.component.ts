@@ -7,8 +7,17 @@ import { DoctorsService } from 'src/app/services/doctors.service';
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.scss']
 })
-export class HomepageComponent {
+export class HomepageComponent implements OnInit {
   constructor(private _doc: DoctorsService) { }
+  docList: IDoctors[] = [];
 
+
+  ngOnInit(): void {
+    this._doc.fetchDocs().subscribe(
+      {
+        next: res => this.docList = res
+      }
+    )
+  }
 
 }
