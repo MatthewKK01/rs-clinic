@@ -52,9 +52,7 @@ export class UserRegistrationComponent {
     }
     )
   }
-
-
-
+  
   onSubmit() {
     const validatedCode = this.userForm.get("activation_code").value.toString();
     const { to_email, password } = this.userForm.value;

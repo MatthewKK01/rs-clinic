@@ -1,7 +1,11 @@
 export interface IDoctors {
     id?: string;
-    fullname: string;
+    name: string;
+    surname: string;
     image: string;
     rating: number | null;
-    doctor_specialties: string;
+    category: string;
+    id_number: number;
+    cv: string;
+    email: string
 }

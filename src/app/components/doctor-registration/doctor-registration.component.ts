@@ -1,4 +1,9 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { IDoctors } from 'src/app/models/idoctors';
+import { IUser } from 'src/app/models/iuser';
+import { DoctorsService } from 'src/app/services/doctors.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-doctor-registration',
@@ -7,4 +12,47 @@ import { Component } from '@angular/core';
 })
 export class DoctorRegistrationComponent {
 
+  registrationForm: FormGroup; // Define the registrationForm FormGroup
+
+  constructor(private _doctor: DoctorsService, private _user: UserService, private fb: FormBuilder) {
+    this.registrationForm = this.fb.group({
+      name: ['', [Validators.required, Validators.minLength(5)]],
+      email: ['', [Validators.required, Validators.email]],
+      id_number: ['', [Validators.required, Validators.pattern('^[0-9]{11}$')]],
+      surname: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(8)]],
+      category: ['', [Validators.required, Validators.minLength(8)]],
+      photo: ['', Validators.required],
+      cv: ['']
+    });
+  }
+  generateRandomNumber(): number {
+    // Generate a random number between 1 and 5
+    const randomNumber = Math.floor(Math.random() * 5) + 1;
+    return randomNumber;
+  }
+
+
+  onSubmit() {
+    const { email, password, id_number, name, surname, category, image, cv } = this.registrationForm.value;
+    const userData: IUser = {
+      email: email,
+      id_number: id_number,
+      name: name,
+      surname: surname,
+      role: "doctor"
+    };
+    const doctorData: IDoctors = {
+      email: email,
+      id_number: id_number,
+      name: name,
+      surname: surname,
+      rating: this.generateRandomNumber(),
+      category: category,
+      image: image || 'fakeIMG',
+      cv: cv,
+    }
+    this._doctor.registerUser(email, password, userData, doctorData);
+    this.registrationForm.reset();
+  }
 }

@@ -44,8 +44,4 @@ export class UserService {
       }
     ).catch((err) => console.log(err));
   }
-  addUser(user: IUser) {
-    const collectionInstance = collection(this.db, 'users');
-    addDoc(collectionInstance, user).then(res => console.log(res)).catch(err => console.log(err))
-  }
 }

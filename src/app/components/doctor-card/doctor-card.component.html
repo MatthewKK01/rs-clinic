@@ -26,8 +26,8 @@
   </div>
   <div style="display: flex; flex-direction: column; align-items: center">
     <div class="avatar"><img [src]="myDoctor.image" alt="" /></div>
-    <p class="fullname">{{ myDoctor.fullname }}</p>
-    <p class="specialize">{{ myDoctor.doctor_specialties }}</p>
+    <p class="fullname">{{ myDoctor.name }}</p>
+    <p class="specialize">{{ myDoctor.category }}</p>
     <form [formGroup]="myForm">
       <ngx-star-rating
         formControlName="rating"
