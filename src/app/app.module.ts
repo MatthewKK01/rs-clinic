@@ -18,6 +18,7 @@ import { environment } from 'src/environments/environment.development';
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
     NgxStarRatingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    AngularFireStorageModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideFirestore(() => getFirestore()),

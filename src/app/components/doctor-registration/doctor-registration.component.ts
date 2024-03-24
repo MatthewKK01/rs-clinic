@@ -4,6 +4,7 @@ import { IDoctors } from 'src/app/models/idoctors';
 import { IUser } from 'src/app/models/iuser';
 import { DoctorsService } from 'src/app/services/doctors.service';
 import { UserService } from 'src/app/services/user.service';
+import { AngularFireStorage } from '@angular/fire/compat/storage'
 
 @Component({
   selector: 'app-doctor-registration',
@@ -13,8 +14,10 @@ import { UserService } from 'src/app/services/user.service';
 export class DoctorRegistrationComponent {
 
   registrationForm: FormGroup; // Define the registrationForm FormGroup
+  selectedImage: string | ArrayBuffer | null = null;
+  formData = new FormData();
 
-  constructor(private _doctor: DoctorsService, private _user: UserService, private fb: FormBuilder) {
+  constructor(private _doctor: DoctorsService, private storage: AngularFireStorage, private fb: FormBuilder) {
     this.registrationForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(5)]],
       email: ['', [Validators.required, Validators.email]],
@@ -26,15 +29,27 @@ export class DoctorRegistrationComponent {
       cv: ['']
     });
   }
-  generateRandomNumber(): number {
+  generateRandomNumber(): string {
     // Generate a random number between 1 and 5
     const randomNumber = Math.floor(Math.random() * 5) + 1;
-    return randomNumber;
+    return randomNumber.toString();
+  }
+  async onFileSelected(event: any) {
+    const fileInput = event.target as HTMLInputElement;
+    const file = fileInput.files?.[0];
+    if (file) {
+      const path = `doctors/${file.name}`
+      const uploadImg = await this.storage.upload(path, file)
+      const url = await uploadImg.ref.getDownloadURL()
+      this.registrationForm.patchValue({
+        photo: url
+      })
+    }
   }
 
 
   onSubmit() {
-    const { email, password, id_number, name, surname, category, image, cv } = this.registrationForm.value;
+    const { email, password, id_number, name, surname, category, photo, cv } = this.registrationForm.value;
     const userData: IUser = {
       email: email,
       id_number: id_number,
@@ -49,7 +64,7 @@ export class DoctorRegistrationComponent {
       surname: surname,
       rating: this.generateRandomNumber(),
       category: category,
-      image: image || 'fakeIMG',
+      image: photo,
       cv: cv,
     }
     this._doctor.registerUser(email, password, userData, doctorData);

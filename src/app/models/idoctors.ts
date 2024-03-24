@@ -3,7 +3,7 @@ export interface IDoctors {
     name: string;
     surname: string;
     image: string;
-    rating: number | null;
+    rating: string;
     category: string;
     id_number: number;
     cv: string;
