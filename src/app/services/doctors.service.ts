@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 import { IDoctors } from '../models/idoctors';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { IUser } from '../models/iuser';
-import { Firestore, collection, collectionData, doc, setDoc } from '@angular/fire/firestore';
+import { Firestore, collection, collectionData, doc, getDoc, setDoc } from '@angular/fire/firestore';
+
 
 import { BehaviorSubject, Observable } from 'rxjs';
 
@@ -29,12 +30,18 @@ export class DoctorsService {
         console.log(res);
         const usersRef = collection(this.db, 'users');
         const docRef = collection(this.db, 'doctors');
-        return setDoc(doc(usersRef, res.user.uid), user), setDoc(doc(docRef, res.user.uid), doctor);
+        return setDoc(doc(usersRef, res.user.uid), user), setDoc(doc(docRef, res.user.uid), { ...doctor, id: res.user.uid });
       }
     ).catch((err) => console.log(err))
   }
   fetchDocs(): Observable<IDoctors[]> {
     const doctorsCollection = collection(this.db, 'doctors')
     return collectionData(doctorsCollection) as Observable<IDoctors[]>
+  }
+  async getDoctor(id: string) {
+    const doctorsRef = doc(this.db, 'doctors', id)
+    const docSnapshot = await getDoc(doctorsRef);
+    const data = docSnapshot.data();
+    return data as IDoctors;
   }
 }

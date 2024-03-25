@@ -1,0 +1,71 @@
+
+.categories{
+    background-color: white;
+    border: 1px solid #ECF2F8;
+    width: 350px;
+    height: 800px;
+    padding-block: 30px ;
+    box-shadow: 0px 4px 50px 0px #0533540D;
+border-radius: 10px;
+    .title{
+        margin-bottom: 14px;
+        font-size: 18px;
+        text-align: center;
+        font-weight: 500;
+    }
+    ul{
+        padding-block: 17px 43px;
+    }
+    li{
+        cursor: pointer;
+        height: 40px;
+        font-size: 16px;
+        font-weight: 400;
+        color: #053354;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        position: relative;
+        padding-left: 104px;
+        span{
+            position: absolute;
+            top: 50%;
+            left: 40px;
+            transform:translateY(-50%);
+        }
+        img{
+            position: absolute;
+            top: 50%;
+            right: 45px;
+            transform:translateY(-50%);
+
+        }
+    }
+    li:hover{
+        background-color: #ECF2F880;
+    }
+}
+ /* Initially hide the arrow */
+ ul li img {
+    opacity: 0;
+
+  }
+  hr{
+    width: 250px;
+    margin-inline: auto;
+  }
+
+  /* Show the arrow on hover */
+  ul li:hover img {
+    opacity: 1;
+  }
+  .view-more{
+    color: #18A4E1;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 13px;
+    img{
+        transform: rotate(90deg);
+    }
+}

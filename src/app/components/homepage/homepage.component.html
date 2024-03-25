@@ -13,57 +13,7 @@
 </div>
 
 <section class="wrapper">
-  <div class="categories">
-    <p class="title">კატეგორიები</p>
-    <hr />
-    <ul>
-      <li>
-        <span>( 1 )</span> ანდროლოგი <img src="assets/arrow.svg" alt="" />
-      </li>
-      <li>
-        <span>( 2 )</span> ანესთეზიოლოგი <img src="assets/arrow.svg" alt="" />
-      </li>
-      <li>
-        <span>( 3 )</span> კარდიოლოგი <img src="assets/arrow.svg" alt="" />
-      </li>
-      <li>
-        <span>( 4 )</span> კოსმეტოლოგი <img src="assets/arrow.svg" alt="" />
-      </li>
-      <li>
-        <span>( 5 )</span> ლაბორანტი <img src="assets/arrow.svg" alt="" />
-      </li>
-      <li>
-        <span>( 6 )</span> ოჯახის ექიმი <img src="assets/arrow.svg" alt="" />
-      </li>
-      <li><span>( 7 )</span> პედიატრი <img src="assets/arrow.svg" alt="" /></li>
-      <li>
-        <span>( 8 )</span> ტოქსიკოლოგი <img src="assets/arrow.svg" alt="" />
-      </li>
-      <li>
-        <span>( 9 )</span> ტრანსფუზილოგი <img src="assets/arrow.svg" alt="" />
-      </li>
-      <li>
-        <span>( 10 )</span> გინეკოლოგი <img src="assets/arrow.svg" alt="" />
-      </li>
-      <li>
-        <span>( 11 )</span> დერმატოლოგი <img src="assets/arrow.svg" alt="" />
-      </li>
-      <li>
-        <span>( 12 )</span> ენდოკრინოლოგი <img src="assets/arrow.svg" alt="" />
-      </li>
-      <li>
-        <span>( 13 )</span> გასტროენტეროლოგი
-        <img src="assets/arrow.svg" alt="" />
-      </li>
-      <li>
-        <span>( 14 )</span> თერაპევტი <img src="assets/arrow.svg" alt="" />
-      </li>
-    </ul>
-    <hr />
-    <p class="view-more">
-      სრულად ნახვა <span><img src="assets/arrow.svg" alt="" /></span>
-    </p>
-  </div>
+  <app-categories-list></app-categories-list>
   <article class="cards">
     <ng-container *ngFor="let doctor of docList"
       ><app-doctor-card [myDoctor]="doctor"></app-doctor-card

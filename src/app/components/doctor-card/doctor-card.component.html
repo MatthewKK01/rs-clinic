@@ -35,6 +35,8 @@
         [disabled]="true"
       ></ngx-star-rating>
     </form>
-    <button [routerLink]="['doctor', myDoctor.name]">მიღებაზე ჩაწერა</button>
+    <button [routerLink]="['doctor', myDoctor.name + myDoctor.surname]">
+      მიღებაზე ჩაწერა
+    </button>
   </div>
 </div>
