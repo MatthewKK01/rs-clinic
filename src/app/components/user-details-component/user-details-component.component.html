@@ -1,0 +1,24 @@
+<section class="wrapper" style="display: flex; gap: 42px">
+  <app-categories-list></app-categories-list>
+  <div class="user-info">
+    <div style="text-align: center">
+      <img src="assets/user.jpg" alt="" />
+      <h2>{{ userData.name }} {{ userData.surname }}</h2>
+      <span>{{ userData?.category }}</span>
+      <br />
+      <span>{{ userData?.rating }}</span>
+    </div>
+    <div class="d-flex">
+      <p>
+        პირადი ნომერი : <br />
+        <span>{{ userData.id_number }}</span>
+      </p>
+      <p>
+        Email : <br />
+        <span>{{ userData.email }}</span>
+      </p>
+      <p>პაროლის შეცვლა</p>
+      <p>ჩემი ჯავშანი: <span>(11)</span></p>
+    </div>
+  </div>
+</section>

@@ -21,6 +21,9 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { ProfileCardComponent } from './components/profile-card/profile-card.component';
 import { CategoriesListComponent } from './components/categories-list/categories-list.component';
+import { UserDetailsComponentComponent } from './components/user-details-component/user-details-component.component';
+import { DoctordetailsComponent } from './components/doctordetails/doctordetails.component';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +36,10 @@ import { CategoriesListComponent } from './components/categories-list/categories
     DoctorAppointmentsComponent,
     AdminDashboardComponent,
     ProfileCardComponent,
-    CategoriesListComponent
+    CategoriesListComponent,
+    UserDetailsComponentComponent,
+    DoctordetailsComponent,
+
   ],
   imports: [
     BrowserModule,

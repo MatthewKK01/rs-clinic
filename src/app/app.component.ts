@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
     this.isModalVisible = true;
   }
   navigateToDashboard(userData: IUser) {
-    const { role, id } = this.userData;
+    const { role, id } = userData;
     let routePath = '';
     switch (role) {
       case 'user':

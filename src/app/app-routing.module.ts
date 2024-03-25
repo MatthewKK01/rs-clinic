@@ -5,14 +5,17 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { DoctorRegistrationComponent } from './components/doctor-registration/doctor-registration.component';
 import { DoctorAppointmentsComponent } from './components/doctor-appointments/doctor-appointments.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
+import { UserDetailsComponentComponent } from './components/user-details-component/user-details-component.component';
+import { DoctordetailsComponent } from './components/doctordetails/doctordetails.component';
 
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
   { path: 'newuser', component: UserRegistrationComponent },
   { path: 'newdoctor', component: DoctorRegistrationComponent },
-  { path: 'user/:id', component: DoctorAppointmentsComponent },
-  { path: 'doctor/:name', component: DoctorAppointmentsComponent },
+  { path: 'user/:id', component: UserDetailsComponentComponent },
+  { path: 'doctor/:id', component: DoctordetailsComponent },
+  { path: 'doctors/:name', component: DoctorAppointmentsComponent },
   { path: 'admin', component: AdminDashboardComponent },
 
 ];

@@ -44,4 +44,10 @@ export class UserService {
       }
     ).catch((err) => console.log(err));
   }
+  async getDoctor(id: string) {
+    const userRef = doc(this.db, 'users', id)
+    const docSnapshot = await getDoc(userRef);
+    const data = docSnapshot.data();
+    return data as IUser;
+  }
 }
