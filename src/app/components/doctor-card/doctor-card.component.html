@@ -26,7 +26,7 @@
   </div>
   <div style="display: flex; flex-direction: column; align-items: center">
     <div class="avatar"><img [src]="myDoctor.image" alt="" /></div>
-    <p class="fullname">{{ myDoctor.name }}</p>
+    <p class="fullname">{{ myDoctor.name }} {{ myDoctor.surname }}</p>
     <p class="specialize">{{ myDoctor.category }}</p>
     <form [formGroup]="myForm">
       <ngx-star-rating
@@ -35,7 +35,10 @@
         [disabled]="true"
       ></ngx-star-rating>
     </form>
-    <button [routerLink]="['doctors', myDoctor.name + myDoctor.surname]">
+    <button
+      [routerLink]="['doctors', myDoctor.name + myDoctor.surname]"
+      [queryParams]="{ id: myDoctor.id.trim() }"
+    >
       მიღებაზე ჩაწერა
     </button>
   </div>

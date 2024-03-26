@@ -9,13 +9,13 @@ import { IDoctors } from 'src/app/models/idoctors';
   styleUrls: ['./profile-card.component.scss']
 })
 export class ProfileCardComponent implements OnInit {
-  @Input() user?: IDoctors;
+  @Input() user: IDoctors;
   public myForm!: FormGroup;
   constructor(private fb: FormBuilder) { }
 
 
   ngOnInit(): void {
-    console.log(this.user?.image);
+
     this.myForm = this.fb.group({
       rating: [null, Validators.required,],
     })
