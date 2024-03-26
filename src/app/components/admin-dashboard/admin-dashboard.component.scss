@@ -1,0 +1,70 @@
+button{
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.action_button{
+    width: 26px !important;
+    height: 26px !important;
+}
+.buttons{
+    gap: 20px;
+    display: flex;
+            justify-content: center;
+            align-items: center;
+}
+
+
+table{
+    border-collapse: collapse;
+  border-spacing: 0;
+border: none;
+
+outline: none;
+    width: 1460px;
+    overflow-y: auto;
+    margin:43px auto 279px auto;
+
+    box-shadow: 0px 4px 30px 0px #0533540D;
+    thead{
+        background-color: #F0FAFF;
+        height: 48px;
+        border-radius: 10px, 10px, 0px, 0px;
+    }
+    tbody{
+        td{
+            height: 57px;
+            text-align: center;
+            img{
+                width: 38px;
+                height: 38px;
+                border-radius: 50%;
+            }
+        }
+        tr{
+            border-bottom: 1px solid #ECF2F8;
+            &:last-child {
+                border-bottom: none; // Apply border color
+              }
+        }
+    }
+}
+::ng-deep label.star{
+    padding: 4px !important;
+  font-size: 20px !important;
+    transform: none !important;
+    color: #FFD233 !important;
+    &::before{
+        text-shadow: none !important;
+        color: #FFD233 !important;
+    }
+}
+.rating{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -23,6 +23,7 @@ import { ProfileCardComponent } from './components/profile-card/profile-card.com
 import { CategoriesListComponent } from './components/categories-list/categories-list.component';
 import { UserDetailsComponentComponent } from './components/user-details-component/user-details-component.component';
 import { DoctordetailsComponent } from './components/doctordetails/doctordetails.component';
+import { NgxStarsModule } from 'ngx-stars';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { DoctordetailsComponent } from './components/doctordetails/doctordetails
     NgxStarRatingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    NgxStarsModule,
     AngularFireStorageModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
