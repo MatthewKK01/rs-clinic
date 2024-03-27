@@ -19,7 +19,7 @@ import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
-import { ProfileCardComponent } from './components/profile-card/profile-card.component';
+
 import { CategoriesListComponent } from './components/categories-list/categories-list.component';
 import { UserDetailsComponentComponent } from './components/user-details-component/user-details-component.component';
 import { DoctordetailsComponent } from './components/doctordetails/doctordetails.component';
@@ -36,7 +36,6 @@ import { NgxStarsModule } from 'ngx-stars';
     DoctorRegistrationComponent,
     DoctorAppointmentsComponent,
     AdminDashboardComponent,
-    ProfileCardComponent,
     CategoriesListComponent,
     UserDetailsComponentComponent,
     DoctordetailsComponent,
