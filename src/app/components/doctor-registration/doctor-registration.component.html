@@ -7,48 +7,90 @@
   <p>რეგისტრაცია</p>
   <div class="input-group">
     <div class="form-group">
-      <label for="">სახელი</label>
+      <label for="name">სახელი</label>
       <input
         formControlName="name"
         type="text"
         placeholder="( მინიმუმ 5 სიმბოლო )"
       />
+      <div class="errors" *ngIf="registrationForm.get('name').touched">
+        <small *ngIf="registrationForm.get('name').hasError('required')">
+          *გთხოვთ შეიყვანოთ სახელი
+        </small>
+        <small *ngIf="registrationForm.get('name').hasError('minlength')">
+          *მინიმუმ 5 სიმბოლო
+        </small>
+      </div>
     </div>
     <div class="form-group">
-      <label for="">ემაილი</label>
+      <label for="email">ემაილი</label>
       <input formControlName="email" type="email" />
+      <div class="errors" *ngIf="registrationForm.get('email').touched">
+        <small *ngIf="registrationForm.get('email').hasError('required')">
+          *გთხოვთ შეიყვანოთ ემაილი
+        </small>
+        <small *ngIf="registrationForm.get('email').hasError('email')">
+          *გთხოვთ შეიყვანოთ ვალიდური მეილი
+        </small>
+      </div>
     </div>
     <div class="form-group">
-      <label for="">პირადი ნომერი</label>
+      <label for="id_number">პირადი ნომერი</label>
       <input
         formControlName="id_number"
         type="number"
         placeholder="00000000000"
       />
+      <div class="errors" *ngIf="registrationForm.get('id_number').touched">
+        <small *ngIf="registrationForm.get('id_number').hasError('required')">
+          *გთხოვთ შეიყვანოთ პირადი ნომერი
+        </small>
+        <small *ngIf="registrationForm.get('id_number').hasError('minlength')">
+          *მინიმუმ 11 სიმბოლო
+        </small>
+      </div>
     </div>
     <div class="form-group">
-      <div><label for="">გვარი</label></div>
+      <div><label for="surname">გვარი</label></div>
       <input formControlName="surname" type="text" />
+      <div class="errors" *ngIf="registrationForm.get('surname').touched">
+        <small *ngIf="registrationForm.get('surname').hasError('required')">
+          *გთხოვთ შეიყვანოთ გვარი
+        </small>
+      </div>
     </div>
 
     <div class="form-group">
-      <label for="">პაროლი</label>
+      <label for="password">პაროლი</label>
       <input
         formControlName="password"
         type="password"
         placeholder="( მინიმუმ 8 სიმბოლო : @ 7 , )"
       />
+      <div class="errors" *ngIf="registrationForm.get('password').touched">
+        <small *ngIf="registrationForm.get('password').hasError('required')">
+          *გთხოვთ შეიყვანოთ პაროლი
+        </small>
+        <small *ngIf="registrationForm.get('password').hasError('minlength')">
+          *მინიმუმ 8 სიმბოლო
+        </small>
+      </div>
     </div>
     <div class="form-group">
-      <label for="">კატეგორია</label>
+      <label for="category">კატეგორია</label>
       <input
         formControlName="category"
         type="text"
         placeholder="( მინიმუმ 8 სიმბოლო : @ 7 , )"
       />
+      <div class="errors" *ngIf="registrationForm.get('category').touched">
+        <small *ngIf="registrationForm.get('category').hasError('required')">
+          *გთხოვთ შეიყვანოთ სპეციალობა
+        </small>
+      </div>
     </div>
     <div style="position: relative; width: 480px">
-      <span for="">ფოტოსურათი</span>
+      <span for="image">ფოტოსურათი</span>
       <img src="assets/img.svg" class="icon" alt="" />
       <label class="form-group-file" for="image"></label>
       <input
@@ -61,11 +103,13 @@
       />
     </div>
     <div style="position: relative; width: 480px">
-      <label for="">CV</label>
+      <label for="cv">CV</label>
       <label for="cv" class="form-group-file"> </label>
       <img class="icon" src="assets/doc.svg" alt="" />
       <input formControlName="cv" name="cv" id="cv" type="file" hidden />
     </div>
-    <button type="submit">რეგისტრაცია</button>
+    <button type="submit" [disabled]="!registrationForm.valid">
+      რეგისტრაცია
+    </button>
   </div>
 </form>

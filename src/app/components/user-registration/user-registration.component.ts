@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import emailjs from '@emailjs/browser';
 import { IUser } from 'src/app/models/iuser';
@@ -9,7 +9,7 @@ import { UserService } from 'src/app/services/user.service';
   templateUrl: './user-registration.component.html',
   styleUrls: ['./user-registration.component.scss']
 })
-export class UserRegistrationComponent {
+export class UserRegistrationComponent implements OnInit {
 
   activationCode: string = ""
 
@@ -18,14 +18,17 @@ export class UserRegistrationComponent {
     return code;
   }
 
-  userForm: FormGroup = this.fb.group({
-    userName: ["", [Validators.required, Validators.minLength(5)]],
-    userSurname: ["", Validators.required],
-    to_email: ["", [Validators.required, Validators.email]],
-    password: ["", [Validators.required, Validators.minLength(8)]],
-    id_number: ["", Validators.required],
-    activation_code: [null, Validators.required],
-  })
+  userForm!: FormGroup
+  ngOnInit(): void {
+    this.userForm = this.fb.group({
+      userName: ["", [Validators.required, Validators.minLength(5)]],
+      userSurname: ["", Validators.required],
+      to_email: ["", [Validators.required, Validators.email]],
+      password: ["", [Validators.required, Validators.minLength(8)]],
+      id_number: ["", [Validators.required, Validators.minLength(11)]],
+      activation_code: [null, [Validators.required, Validators.minLength(6)]],
+    })
+  }
 
   constructor(private fb: FormBuilder, private _user: UserService) {
     emailjs.init("1_mrNZ5LnjFDdqjaD")
@@ -52,7 +55,7 @@ export class UserRegistrationComponent {
     }
     )
   }
-  
+
   onSubmit() {
     const validatedCode = this.userForm.get("activation_code").value.toString();
     const { to_email, password } = this.userForm.value;
@@ -63,7 +66,7 @@ export class UserRegistrationComponent {
       id_number: this.userForm.get('id_number').value,
       email: this.userForm.get('to_email').value,
     }
-    
+
     if (validatedCode === this.activationCode) {
       this._user.registerUser(to_email, password, userData);
       this.userForm.reset()

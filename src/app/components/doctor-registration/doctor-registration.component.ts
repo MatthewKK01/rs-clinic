@@ -21,7 +21,7 @@ export class DoctorRegistrationComponent {
     this.registrationForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(5)]],
       email: ['', [Validators.required, Validators.email]],
-      id_number: ['', [Validators.required, Validators.pattern('^[0-9]{11}$')]],
+      id_number: ['', [Validators.required, Validators.minLength(11), Validators.pattern('^[0-9]{11}$')]],
       surname: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(8)]],
       category: ['', [Validators.required, Validators.minLength(8)]],

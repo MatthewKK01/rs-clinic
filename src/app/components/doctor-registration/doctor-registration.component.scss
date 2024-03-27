@@ -50,4 +50,19 @@ p{
 .form-group{
     display: flex;
     flex-direction: column;
+    position: relative;
+}
+label,span{
+    padding-left: 20px;
+}
+.errors{
+    position: absolute;
+    top: 75px;
+}
+small{
+    padding-left: 20px;
+    color: red;
+}
+button:disabled{
+    background-color: #0533544D;
 }

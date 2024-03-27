@@ -2,18 +2,33 @@
   <p>რეგისტრაცია</p>
   <div class="input-group">
     <div class="form-group">
-      <label for="">სახელი</label>
+      <label for="userName">სახელი</label>
       <input
         formControlName="userName"
         type="text"
         placeholder="( მინიმუმ 5 სიმბოლო )"
       />
+
+      <div class="errors" *ngIf="userForm.get('userName').touched">
+        <small *ngIf="userForm.get('userName').hasError('required')">
+          *გთხოვთ შეიყვანოთ სახელი
+        </small>
+        <small *ngIf="userForm.get('userName').hasError('minlength')">
+          *მინიმუმ 5 ასო
+        </small>
+      </div>
     </div>
     <div class="form-group">
       <label for="">ემაილი</label>
       <div class="mail">
         <input formControlName="to_email" type="email" />
         <img src="assets/mail-arrow.svg" (click)="sendEmail()" alt="" />
+      </div>
+
+      <div class="errors" *ngIf="userForm.get('to_email').touched">
+        <small *ngIf="userForm.get('to_email').hasError('required')">
+          *გთხოვთ შეიყვანოთ ემაილი
+        </small>
       </div>
     </div>
 
@@ -24,10 +39,25 @@
         formControlName="id_number"
         placeholder="00000000000"
       />
+
+      <div class="errors" *ngIf="userForm.get('id_number').touched">
+        <small *ngIf="userForm.get('id_number').hasError('required')">
+          *გთხოვთ შეიყვანოთ პირადი ნომერი
+        </small>
+        <small *ngIf="userForm.get('id_number').hasError('minlength')">
+          *მინიმუმ 11 ციფრი
+        </small>
+      </div>
     </div>
     <div class="form-group">
       <label for="">გვარი</label>
       <input formControlName="userSurname" type="text" />
+
+      <div class="errors" *ngIf="userForm.get('userSurname').touched">
+        <small *ngIf="userForm.get('userSurname').hasError('required')">
+          *გთხოვთ შეიყვანოთ გვარი
+        </small>
+      </div>
     </div>
 
     <div class="form-group">
@@ -35,6 +65,14 @@
         <label for="">აქტივაციის კოდი</label> <span>ვადა 30 წუთი</span>
       </div>
       <input formControlName="activation_code" type="number" />
+      <div class="errors" *ngIf="userForm.get('activation_code').touched">
+        <small *ngIf="userForm.get('activation_code').hasError('required')">
+          *გთხოვთ შეიყვანოთ აქტივაციის კოდი
+        </small>
+        <small *ngIf="userForm.get('activation_code').hasError('minlength')">
+          *მინიმუმ 6 ციფრი
+        </small>
+      </div>
     </div>
 
     <div class="form-group">
@@ -44,6 +82,14 @@
         formControlName="password"
         placeholder="( მინიმუმ 8 სიმბოლო : @ 7 , )"
       />
+      <div class="errors" *ngIf="userForm.get('password').touched">
+        <small *ngIf="userForm.get('password').hasError('required')">
+          *გთხოვთ შეიყვანოთ პაროლი
+        </small>
+        <small *ngIf="userForm.get('password').hasError('minlength')">
+          *მინიმუმ 11 ციფრი
+        </small>
+      </div>
     </div>
   </div>
   <button [disabled]="!userForm.valid" type="submit">რეგისტრაცია</button>
