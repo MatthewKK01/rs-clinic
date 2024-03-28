@@ -11,11 +11,13 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class UserRegistrationComponent implements OnInit {
 
-  activationCode: string = ""
+  activationCode: { code: string, timestamp: number } = { code: "", timestamp: 0 };
+  activationError: string = ""
+  generateActivationCode(): { code: string, timestamp: number } {
 
-  generateActivationCode(): string {
     const code = Math.floor(100000 + Math.random() * 900000).toString();
-    return code;
+    const timestamp = Date.now(); // Current timestamp in milliseconds
+    return { code, timestamp };
   }
 
   userForm!: FormGroup
@@ -42,7 +44,7 @@ export class UserRegistrationComponent implements OnInit {
     const templateParams = {
       from_name: "კლინიკიდან",
       to_email: this.userForm.value.to_email,
-      activation_code: generatedCode,
+      activation_code: generatedCode.code,
     };
 
     this.activationCode = generatedCode;
@@ -68,10 +70,14 @@ export class UserRegistrationComponent implements OnInit {
     }
 
     if (validatedCode === this.activationCode) {
-      this._user.registerUser(to_email, password, userData);
-      this.userForm.reset()
+      const currentTime = Date.now();
+      if (currentTime - this.activationCode.timestamp <= 120000) {
+        this._user.registerUser(to_email, password, userData);
+        this.userForm.reset()
+      }
     } else {
-      console.log("activation code isnot valid");
+      this.activationError = "*ბმულის მოქედების ვადა ამოიწურა"
+      alert("აქტივაციის კოდი არასწორია");
     }
   }
 }

@@ -7,13 +7,14 @@ import { Firestore, collection, collectionData, deleteDoc, doc, getDoc, setDoc }
 
 
 import { BehaviorSubject, Observable } from 'rxjs';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DoctorsService {
 
-  constructor(private afs: AngularFireAuth, private db: Firestore) { }
+  constructor(private afs: AngularFireAuth, private db: Firestore, private _user: UserService) { }
   private searchCriteriaSubject: BehaviorSubject<{ name: string, category: string }> = new BehaviorSubject<{ name: string, category: string }>({ name: '', category: '' });
 
   setSearchCriteria(name: string, category: string) {
@@ -45,7 +46,13 @@ export class DoctorsService {
     return data as IDoctors;
   }
   async deleteDoctor(id: string) {
-    const doctorsRef = doc(this.db, 'doctors', id)
-    return await deleteDoc(doctorsRef);
+    const doctorsRef = doc(this.db, 'doctors', id.trim())
+    try {
+      await deleteDoc(doctorsRef);
+      await this._user.deleteUser(id)
+      return Promise.resolve();
+    } catch (error) {
+      return Promise.reject(error);
+    }
   }
 }

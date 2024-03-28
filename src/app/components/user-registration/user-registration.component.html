@@ -44,8 +44,8 @@
         <small *ngIf="userForm.get('id_number').hasError('required')">
           *გთხოვთ შეიყვანოთ პირადი ნომერი
         </small>
-        <small *ngIf="userForm.get('id_number').hasError('minlength')">
-          *მინიმუმ 11 ციფრი
+        <small *ngIf="userForm.get('id_number').hasError('invalidIdNumber')">
+          *პირადი ნომერი უნდა შეიცავდეს 11 სიმბოლოს
         </small>
       </div>
     </div>
@@ -72,6 +72,7 @@
         <small *ngIf="userForm.get('activation_code').hasError('minlength')">
           *მინიმუმ 6 ციფრი
         </small>
+        <small *ngIf="activationError">{{ activationError }}</small>
       </div>
     </div>
 

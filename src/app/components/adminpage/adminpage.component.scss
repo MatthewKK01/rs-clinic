@@ -1,0 +1,73 @@
+.burger-menu {
+    display: flex;
+    flex-direction: column;
+
+    width: 28px;
+    height: 20px;
+    gap: 4px;
+    cursor: pointer;
+  }
+  .action{
+    width: 516px;
+    background-color: white;
+    box-shadow: 0px 4px 30px 0px #0533540D;
+border-radius: 25px;
+padding: 14px 24px;
+display: flex;
+align-items: center;
+gap: 34px;
+height: 50px;
+
+  }
+  nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-block: 45px 63px;
+  }
+  ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+  }
+  .bar {
+    width: 100%;
+    height: 3px;
+    border-radius: 10px;
+    background-color: #18A4E1;
+  }
+  .bar2{
+    width: 23px;
+  }
+  .bar3{
+    width: 16px;
+  }
+  button{
+    width: 350px;
+    height: 50px;
+    border:1px solid #18A4E14D;
+    background-color: white;
+    border-radius: 50px;
+    padding: 14px 106px;
+    color: #18A4E1;
+    font-weight: 500;
+    font-size: 18px;
+&:hover{
+background-color: #F0FAFF;
+border: none;
+}
+.bold{
+    color: #18A4E1;
+    font-weight: 500;
+}
+.active{
+    background-color: #F0FAFF;
+border: none;
+}
+  }
+  .appointments{
+    display: flex;
+    gap: 20px;
+  }

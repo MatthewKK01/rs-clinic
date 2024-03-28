@@ -1,0 +1,29 @@
+<nav class="wrapper">
+  <div class="action">
+    <div class="burger-menu">
+      <div class="bar bar1"></div>
+      <div class="bar bar2"></div>
+      <div class="bar bar3"></div>
+    </div>
+    <ul>
+      <li>
+        <a routerLinkActive="bold" [routerLink]="['/newdoctor']" href=""
+          >რეგისტრაცია</a
+        >
+      </li>
+      <li><a routerLinkActive="bold" href="">კატეგორიები</a></li>
+      <li>
+        <a routerLinkActive="bold" [routerLink]="['/admin']" href="">ექიმები</a>
+      </li>
+    </ul>
+  </div>
+  <div class="appointments">
+    <button routerLinkActive="active" [routerLink]="['/admin']">ექიმი</button>
+    <button routerLinkActive="active" [routerLink]="['/user']">
+      მომხმარებელი
+    </button>
+    <button routerLinkActive="active" [routerLink]="['/admindetails']">
+      ადმინისტრატორი
+    </button>
+  </div>
+</nav>

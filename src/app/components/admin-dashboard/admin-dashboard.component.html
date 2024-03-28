@@ -2,18 +2,22 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Category</th>
-      <th>Photo</th>
-      <th>Rating</th>
+      <th style="padding-left: 34px">სახელი</th>
+      <th>კატეგორია</th>
+      <th style="text-align: center">ფოტოსურათი</th>
+      <th style="text-align: center">რეიტინგი</th>
       <th></th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let doctor of docData">
-      <td>{{ doctor.name }}</td>
+      <td style="text-align: start; padding-left: 34px">
+        {{ doctor.name }} {{ doctor.surname }}
+      </td>
       <td>{{ doctor.category }}</td>
-      <td><img [src]="doctor.image" alt="Doctor Photo" height="38" /></td>
+      <td style="text-align: center">
+        <img [src]="doctor.image" alt="Doctor Photo" height="38" />
+      </td>
       <td>
         <div class="rating">
           <form [formGroup]="myForm">

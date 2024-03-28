@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { IUser } from '../models/iuser';
-import { Firestore, collection, addDoc, doc, getDoc, setDoc, collectionData, collectionChanges } from '@angular/fire/firestore';
+import { Firestore, collection, doc, getDoc, setDoc, deleteDoc } from '@angular/fire/firestore';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { Observable } from 'rxjs';
 
@@ -30,7 +30,6 @@ export class UserService {
   loginUser(email: string, password: string) {
     this.afs.signInWithEmailAndPassword(email, password).then(
       async (res) => {
-        console.log(res.user.uid);
         const userRef = doc(this.db, 'users', res.user.uid);
         const userSnapshot = await getDoc(userRef);
         if (userSnapshot.exists()) {
@@ -39,7 +38,7 @@ export class UserService {
           const userData = { ...document, id: res.user.uid } as IUser;
           this.userDataSubject.next(userData);
         } else {
-          console.log('User not found');
+          alert('User not found');
         }
       }
     ).catch((err) => console.log(err));
@@ -49,5 +48,9 @@ export class UserService {
     const docSnapshot = await getDoc(userRef);
     const data = docSnapshot.data();
     return data as IUser;
+  }
+  async deleteUser(id: string) {
+    const usersRef = doc(this.db, 'users', id.trim())
+    return await deleteDoc(usersRef);
   }
 }

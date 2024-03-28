@@ -12,7 +12,6 @@ import { NgxStarRatingModule } from 'ngx-star-rating';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DoctorAppointmentsComponent } from './components/doctor-appointments/doctor-appointments.component'
-
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment.development';
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
@@ -24,6 +23,8 @@ import { CategoriesListComponent } from './components/categories-list/categories
 import { UserDetailsComponentComponent } from './components/user-details-component/user-details-component.component';
 import { DoctordetailsComponent } from './components/doctordetails/doctordetails.component';
 import { NgxStarsModule } from 'ngx-stars';
+import { AdminpageComponent } from './components/adminpage/adminpage.component';
+
 
 
 @NgModule({
@@ -39,7 +40,7 @@ import { NgxStarsModule } from 'ngx-stars';
     CategoriesListComponent,
     UserDetailsComponentComponent,
     DoctordetailsComponent,
-
+    AdminpageComponent,
   ],
   imports: [
     BrowserModule,
