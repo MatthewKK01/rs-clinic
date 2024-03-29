@@ -2,8 +2,18 @@ section{
     padding-block: 41px 191px;
     display: flex;
     gap: 42px;
+    align-items: flex-start;
 }
 
+.arrow_btn{
+  background-color: white;
+  width: 21px;
+  height: 21px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
 .user-info{
     width: 366px;
     height: 800px;
@@ -38,3 +48,44 @@ h2{
 span{
 color: #0533544D;
 }
+tbody{
+    td{
+      border: 1px solid #ECF2F8;
+        width: 100px;
+        height: 60px;
+      text-align: center;
+    }
+    tr{
+      text-wrap: nowrap;
+      border: 1px solid #ECF2F8;
+color: #0533544D;
+&:hover{
+color: #053354;
+}
+    }
+  }
+  th{
+    font-weight: 400;
+    padding-block: 15px;
+    background-color: #ECF2F8;
+    span{
+color: #18A4E1;
+font-weight: 500;
+    }
+  }
+
+ table{
+  border-radius: 10px 10px 0px 0px;
+overflow: hidden;
+ }
+ .checked{
+background-color: #DAFAEE;
+color: #3ACF99;
+font-size: 12px;
+ }
+  .bg-yellow{
+    background-color: #FFFFF5;
+  }
+  table{
+    border-collapse: collapse;
+  }

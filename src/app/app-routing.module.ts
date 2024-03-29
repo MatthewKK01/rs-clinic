@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'doctor/:id', component: DoctordetailsComponent },
   { path: 'doctors/:name', component: DoctorAppointmentsComponent },
   { path: 'admin', component: AdminpageComponent },
-  { path: 'admin/categories', component: AdminDashboardComponent },
+  { path: 'categories', component: AdminDashboardComponent },
   { path: '**', component: HomepageComponent },
 ];
 
