@@ -89,3 +89,43 @@ font-size: 12px;
   table{
     border-collapse: collapse;
   }
+  .edit,
+  .delete{
+     height: 50px;
+     border-radius: 50px;
+     display: flex;
+     align-items: center;
+     padding-inline: 33px;
+     padding-block: 12px;
+     gap: 10px;
+     background-color: #ECF2F8;
+     color: #18A4E1;
+     width: 230px;
+     font-size: 18px;
+     margin-top: 31px;
+     font-weight: 500;
+  }
+  .delete{
+     background-color: #FF93A6;
+     color: white;
+     width: 170px;
+  }
+  .edit{
+      margin-right: 30px;
+  }
+  .buttons{
+    margin-bottom: 30px;
+    display: flex;
+    gap: 30px;
+    justify-content: end;
+  }
+  ::ng-deep label.star{
+    padding: 4px !important;
+  font-size: 20px !important;
+    transform: none !important;
+    color: #FFD233 !important;
+    &::before{
+        text-shadow: none !important;
+        color: #FFD233 !important;
+    }
+}
