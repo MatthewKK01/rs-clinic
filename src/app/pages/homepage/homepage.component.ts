@@ -13,11 +13,7 @@ export class HomepageComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this._doc.fetchDocs().subscribe(
-      {
-        next: res => this.docList = res
-      }
-    )
+
   }
 
 }

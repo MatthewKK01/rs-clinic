@@ -22,7 +22,7 @@
       <label for="">ემაილი</label>
       <div class="mail">
         <input formControlName="to_email" type="email" />
-        <img src="assets/mail-arrow.svg" (click)="sendEmail()" alt="" />
+        <img src="../../../assets/mail-arrow.svg" (click)="sendEmail()" alt="" />
       </div>
 
       <div class="errors" *ngIf="userForm.get('to_email').touched">

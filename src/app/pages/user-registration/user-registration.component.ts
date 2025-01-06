@@ -68,7 +68,7 @@ export class UserRegistrationComponent implements OnInit {
     }
 
     if (validatedCode === this.activationCode) {
-      this._user.registerUser(to_email, password, userData);
+
       this.userForm.reset()
 
     } else {

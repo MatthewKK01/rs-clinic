@@ -18,6 +18,6 @@ export class UserDetailsComponentComponent implements OnInit {
     this.route.params.subscribe({
       next: param => this.user_id = param['id']
     })
-    this._user.getDoctor(this.user_id).then(data => this.userData = data)
+
   }
 }

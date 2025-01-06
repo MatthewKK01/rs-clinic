@@ -91,7 +91,7 @@
     </div>
     <div style="position: relative; width: 480px">
       <span for="image">ფოტოსურათი</span>
-      <img src="assets/img.svg" class="icon" alt="" />
+      <img src="../../../assets/img.svg" class="icon" alt="" />
       <label class="form-group-file" for="image"></label>
       <input
         formControlName="photo"
@@ -105,7 +105,7 @@
     <div style="position: relative; width: 480px">
       <label for="cv">CV</label>
       <label for="cv" class="form-group-file"> </label>
-      <img class="icon" src="assets/doc.svg" alt="" />
+      <img class="icon" src="../../../assets/doc.svg" alt="" />
       <input formControlName="cv" name="cv" id="cv" type="file" hidden />
     </div>
     <button type="submit" [disabled]="!registrationForm.valid">

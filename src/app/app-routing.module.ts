@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
-import { HomepageComponent } from './components/homepage/homepage.component';
-import { DoctorRegistrationComponent } from './components/doctor-registration/doctor-registration.component';
-import { DoctorAppointmentsComponent } from './components/doctor-appointments/doctor-appointments.component';
-import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
-import { UserDetailsComponentComponent } from './components/user-details-component/user-details-component.component';
-import { DoctordetailsComponent } from './components/doctordetails/doctordetails.component';
-import { AdminpageComponent } from './components/adminpage/adminpage.component';
+import { UserRegistrationComponent } from './pages/user-registration/user-registration.component';
+import { HomepageComponent } from './pages/homepage/homepage.component';
+import { DoctorRegistrationComponent } from './pages/doctor-registration/doctor-registration.component';
+import { DoctorAppointmentsComponent } from './pages/doctor-appointments/doctor-appointments.component';
+import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
+import { UserDetailsComponentComponent } from './pages/user-details-component/user-details-component.component';
+import { DoctordetailsComponent } from './pages/doctordetails/doctordetails.component';
+import { AdminpageComponent } from './pages/adminpage/adminpage.component';
 
 
 const routes: Routes = [

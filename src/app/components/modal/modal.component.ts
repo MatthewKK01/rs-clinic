@@ -27,7 +27,7 @@ export class ModalComponent {
 
   onSubmit() {
     const { email, password } = this.loginForm.value;
-    this._user.loginUser(email, password)
+
     this.onCloseClick()
   }
 }

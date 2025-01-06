@@ -22,15 +22,9 @@ export class AdminDashboardComponent implements OnInit {
       rating: [null, Validators.required],
     })
 
-    this._doc.fetchDocs().subscribe({
-      next: res => {
-        this.docData = res;
-      }
-    });
+
   }
 
   editDoctor(doctor: IDoctors) { }
-  deleteDoctor(docId: string) {
-    this._doc.deleteDoctor(docId).then((res) => console.log(res)).catch(err => console.log(err))
-  }
+
 }

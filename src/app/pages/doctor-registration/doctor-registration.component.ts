@@ -67,7 +67,6 @@ export class DoctorRegistrationComponent {
       image: photo,
       cv: cv,
     }
-    this._doctor.registerUser(email, password, userData, doctorData);
     this.registrationForm.reset();
   }
 }

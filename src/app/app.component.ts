@@ -21,10 +21,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._user.userData$.subscribe(({
-      next: res => this.userData = res,
-      error: err => console.log(err)
-    }))
+
   }
 
   openModal(): void {
@@ -51,9 +48,7 @@ export class AppComponent implements OnInit {
       this.router.navigate([routePath], { relativeTo: this.route });
     }
   }
-  updateSearchCriteria() {
-    this._doc.setSearchCriteria(this.name, this.category);
-  }
+
 
 
 }

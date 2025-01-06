@@ -14,45 +14,4 @@ import { UserService } from './user.service';
 })
 export class DoctorsService {
 
-  constructor(private afs: AngularFireAuth, private db: Firestore, private _user: UserService) { }
-  private searchCriteriaSubject: BehaviorSubject<{ name: string, category: string }> = new BehaviorSubject<{ name: string, category: string }>({ name: '', category: '' });
-
-  setSearchCriteria(name: string, category: string) {
-    this.searchCriteriaSubject.next({ name, category });
-  }
-
-  getSearchCriteria() {
-    return this.searchCriteriaSubject.asObservable();
-  }
-
-  registerUser(email: string, password: string, user: IUser, doctor: IDoctors) {
-    this.afs.createUserWithEmailAndPassword(email, password).then(
-      (res) => {
-        console.log(res);
-        const usersRef = collection(this.db, 'users');
-        const docRef = collection(this.db, 'doctors');
-        return setDoc(doc(usersRef, res.user.uid), user), setDoc(doc(docRef, res.user.uid), { ...doctor, id: res.user.uid });
-      }
-    ).catch((err) => console.log(err))
-  }
-  fetchDocs(): Observable<IDoctors[]> {
-    const doctorsCollection = collection(this.db, 'doctors')
-    return collectionData(doctorsCollection) as Observable<IDoctors[]>
-  }
-  async getDoctor(id: string) {
-    const doctorsRef = doc(this.db, 'doctors', id)
-    const docSnapshot = await getDoc(doctorsRef);
-    const data = docSnapshot.data();
-    return data as IDoctors;
-  }
-  async deleteDoctor(id: string) {
-    const doctorsRef = doc(this.db, 'doctors', id.trim())
-    try {
-      await deleteDoc(doctorsRef);
-      await this._user.deleteUser(id)
-      return Promise.resolve();
-    } catch (error) {
-      return Promise.reject(error);
-    }
-  }
 }

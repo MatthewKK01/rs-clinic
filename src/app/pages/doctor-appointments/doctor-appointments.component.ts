@@ -29,11 +29,7 @@ export class DoctorAppointmentsComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.id = params['id']; // Extracting the 'id' parameter from query params
     });
-    this._doc.getDoctor(this.id).then((res) => {
-      this.myDoctor = res; this.myForm.patchValue({
-        rating: res.rating
-      })
-    }).catch(err => console.log(err))
-    console.log(this.myDoctor);
+
+
   }
 }

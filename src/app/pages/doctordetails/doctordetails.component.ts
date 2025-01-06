@@ -25,6 +25,5 @@ export class DoctordetailsComponent implements OnInit {
       rating: '',
     })
 
-    this._doc.getDoctor(this.doc_id).then(data => { this.docData = data; this.myForm.get('rating').patchValue(data.rating) })
   }
 }
