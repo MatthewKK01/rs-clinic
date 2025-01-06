@@ -1,13 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { UserService } from './services/user.service';
 import { IUser } from './models/iuser';
 import { DoctorsService } from './services/doctors.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    standalone: true,
+    imports: [RouterLink, RouterLinkActive, ReactiveFormsModule, RouterOutlet]
 })
 export class AppComponent implements OnInit {
   title = 'rs-clinic';

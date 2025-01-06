@@ -1,12 +1,14 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { IDoctors } from 'src/app/models/idoctors';
 
 @Component({
-  selector: 'app-doctor-card',
-  templateUrl: './doctor-card.component.html',
-  styleUrls: ['./doctor-card.component.scss']
+    selector: 'app-doctor-card',
+    templateUrl: './doctor-card.component.html',
+    styleUrls: ['./doctor-card.component.scss'],
+    standalone: true,
+    imports: [RouterLink]
 })
 export class DoctorCardComponent implements OnInit {
   @Input() myDoctor!: IDoctors;

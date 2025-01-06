@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import emailjs from '@emailjs/browser';
 import { IUser } from 'src/app/models/iuser';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
-  selector: 'app-user-registration',
-  templateUrl: './user-registration.component.html',
-  styleUrls: ['./user-registration.component.scss']
+    selector: 'app-user-registration',
+    templateUrl: './user-registration.component.html',
+    styleUrls: ['./user-registration.component.scss'],
+    standalone: true,
+    imports: [ReactiveFormsModule]
 })
 export class UserRegistrationComponent implements OnInit {
 

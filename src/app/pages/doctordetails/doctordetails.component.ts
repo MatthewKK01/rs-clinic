@@ -3,11 +3,14 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { IDoctors } from 'src/app/models/idoctors';
 import { DoctorsService } from 'src/app/services/doctors.service';
+import { CategoriesListComponent } from '../../components/categories-list/categories-list.component';
 
 @Component({
-  selector: 'app-doctordetails',
-  templateUrl: './doctordetails.component.html',
-  styleUrls: ['./doctordetails.component.scss']
+    selector: 'app-doctordetails',
+    templateUrl: './doctordetails.component.html',
+    styleUrls: ['./doctordetails.component.scss'],
+    standalone: true,
+    imports: [CategoriesListComponent]
 })
 export class DoctordetailsComponent implements OnInit {
   public docData: IDoctors;

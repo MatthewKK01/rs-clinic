@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLinkActive, RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-adminpage',
-  templateUrl: './adminpage.component.html',
-  styleUrls: ['./adminpage.component.scss']
+    selector: 'app-adminpage',
+    templateUrl: './adminpage.component.html',
+    styleUrls: ['./adminpage.component.scss'],
+    standalone: true,
+    imports: [RouterLinkActive, RouterLink]
 })
 export class AdminpageComponent {
 

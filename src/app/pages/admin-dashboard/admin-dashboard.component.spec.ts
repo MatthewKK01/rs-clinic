@@ -8,8 +8,8 @@ describe('AdminDashboardComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [AdminDashboardComponent]
-    });
+    imports: [AdminDashboardComponent]
+});
     fixture = TestBed.createComponent(AdminDashboardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

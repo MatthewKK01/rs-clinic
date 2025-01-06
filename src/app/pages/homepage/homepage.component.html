@@ -15,8 +15,9 @@
 <section class="wrapper">
   <app-categories-list></app-categories-list>
   <article class="cards">
-    <ng-container *ngFor="let doctor of docList"
-      ><app-doctor-card [myDoctor]="doctor"></app-doctor-card
-    ></ng-container>
-  </article>
-</section>
+    @for (doctor of docList; track doctor) {
+      <app-doctor-card [myDoctor]="doctor"></app-doctor-card
+        >
+      }
+    </article>
+  </section>

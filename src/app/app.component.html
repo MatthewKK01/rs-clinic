@@ -14,20 +14,21 @@
       <li>კონტაქტი</li>
     </ul>
   </nav>
-  <div *ngIf="userData; else notLoggedIn">
-    <!-- Render content for logged-in users -->
-    <div class="loggedUser">
-      <img src="/assets/user.jpg" alt="" />
-      <span (click)="navigateToDashboard(userData)">{{ userData.name }}</span>
+  @if (userData) {
+    <div>
+      <!-- Render content for logged-in users -->
+      <div class="loggedUser">
+        <img src="/assets/user.jpg" alt="" />
+        <span (click)="navigateToDashboard(userData)">{{ userData.name }}</span>
+      </div>
     </div>
-  </div>
-  <ng-template #notLoggedIn>
+  } @else {
     <div class="auth">
       <a [class.active]="isModalVisible" (click)="openModal()">ავტორიზაცია</a>
       /
       <a routerLink="newuser" routerLinkActive="active">რეგისტრაცია</a>
     </div>
-  </ng-template>
+  }
   <span class="local">ENG</span>
 </header>
 <div class="search">
@@ -51,77 +52,73 @@
         id="doctorName"
         name="მოძებნე ექიმი სახელით"
         placeholder="Enter name"
-      />
+        />
 
-      <input
-        type="text"
-        id="specialization"
-        name="მოძებნე სპეციალობით"
-        placeholder="Enter specialization"
-      />
+        <input
+          type="text"
+          id="specialization"
+          name="მოძებნე სპეციალობით"
+          placeholder="Enter specialization"
+          />
 
-      <button class="icon" type="submit">
-        <img src="assets/ri_search-line.svg" alt="" />
-      </button>
-    </form>
-  </div>
-</div>
-<router-outlet></router-outlet>
-
-<app-modal
-  (closeModal)="isModalVisible = $event"
-  [isVisible]="isModalVisible"
-></app-modal>
-
-<footer>
-  <div class="wrapper">
-    <div class="logo" style="flex-grow: 1">
-      <img src="assets/logo2.svg" alt="" />
-      <span style="color: white">კლინიკა</span>
+          <button class="icon" type="submit">
+            <img src="assets/ri_search-line.svg" alt="" />
+          </button>
+        </form>
+      </div>
     </div>
-    <div class="container" style="flex-grow: 2">
-      <ul class="menu">
-        <li>ინფორმაცია</li>
-        <li>პაციენტებისთვის</li>
-        <li>კონტაქტი</li>
-        <li>გამოგვყევით</li>
-      </ul>
-      <hr />
-      <nav>
-        <ul>
-          <li>ჩვენ შესახებ</li>
-          <li>პარტნიორები</li>
-          <li>ექიმებისთვის</li>
-          <li>კლინიკებისთვის</li>
-          <li>აფთიაქებისთვის</li>
-        </ul>
-        <ul>
-          <li>ექიმები</li>
-          <li>კლინიკები</li>
-          <li>ანოტაციები</li>
-          <li>ბლოგი</li>
-          <li>მედია</li>
-        </ul>
-        <ul>
-          <li>სამუშაო დღეები:</li>
-          <li>ორშ - პარ</li>
-          <li>სამუშაო დრო:</li>
-          <li>9:00 - 17:00</li>
-          <li>იაკობ ნიკოლაძე №10</li>
-          <li>032 2 100 100</li>
-        </ul>
-        <ul>
-          <li>Facebook</li>
-          <li>Instagram</li>
-          <li>Youtube</li>
-        </ul>
-      </nav>
+    <router-outlet></router-outlet>
+
+
+    <footer>
+      <div class="wrapper">
+        <div class="logo" style="flex-grow: 1">
+          <img src="assets/logo2.svg" alt="" />
+          <span style="color: white">კლინიკა</span>
+        </div>
+        <div class="container" style="flex-grow: 2">
+          <ul class="menu">
+            <li>ინფორმაცია</li>
+            <li>პაციენტებისთვის</li>
+            <li>კონტაქტი</li>
+            <li>გამოგვყევით</li>
+          </ul>
+          <hr />
+          <nav>
+            <ul>
+              <li>ჩვენ შესახებ</li>
+              <li>პარტნიორები</li>
+              <li>ექიმებისთვის</li>
+              <li>კლინიკებისთვის</li>
+              <li>აფთიაქებისთვის</li>
+            </ul>
+            <ul>
+              <li>ექიმები</li>
+              <li>კლინიკები</li>
+              <li>ანოტაციები</li>
+              <li>ბლოგი</li>
+              <li>მედია</li>
+            </ul>
+            <ul>
+              <li>სამუშაო დღეები:</li>
+              <li>ორშ - პარ</li>
+              <li>სამუშაო დრო:</li>
+              <li>9:00 - 17:00</li>
+              <li>იაკობ ნიკოლაძე №10</li>
+              <li>032 2 100 100</li>
+            </ul>
+            <ul>
+              <li>Facebook</li>
+              <li>Instagram</li>
+              <li>Youtube</li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </footer>
+    <div
+      style="padding-block: 10px; background-color: white; font-size: 14px"
+      class="wrapper"
+      >
+      copyright
     </div>
-  </div>
-</footer>
-<div
-  style="padding-block: 10px; background-color: white; font-size: 14px"
-  class="wrapper"
->
-  copyright
-</div>

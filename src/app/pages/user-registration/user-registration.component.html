@@ -7,90 +7,122 @@
         formControlName="userName"
         type="text"
         placeholder="( მინიმუმ 5 სიმბოლო )"
-      />
+        />
 
-      <div class="errors" *ngIf="userForm.get('userName').touched">
-        <small *ngIf="userForm.get('userName').hasError('required')">
-          *გთხოვთ შეიყვანოთ სახელი
-        </small>
-        <small *ngIf="userForm.get('userName').hasError('minlength')">
-          *მინიმუმ 5 ასო
-        </small>
+        @if (userForm.get('userName').touched) {
+          <div class="errors">
+            @if (userForm.get('userName').hasError('required')) {
+              <small>
+                *გთხოვთ შეიყვანოთ სახელი
+              </small>
+            }
+            @if (userForm.get('userName').hasError('minlength')) {
+              <small>
+                *მინიმუმ 5 ასო
+              </small>
+            }
+          </div>
+        }
       </div>
-    </div>
-    <div class="form-group">
-      <label for="">ემაილი</label>
-      <div class="mail">
-        <input formControlName="to_email" type="email" />
-        <img src="../../../assets/mail-arrow.svg" (click)="sendEmail()" alt="" />
+      <div class="form-group">
+        <label for="">ემაილი</label>
+        <div class="mail">
+          <input formControlName="to_email" type="email" />
+          <img src="../../../assets/mail-arrow.svg" (click)="sendEmail()" alt="" />
+        </div>
+
+        @if (userForm.get('to_email').touched) {
+          <div class="errors">
+            @if (userForm.get('to_email').hasError('required')) {
+              <small>
+                *გთხოვთ შეიყვანოთ ემაილი
+              </small>
+            }
+          </div>
+        }
       </div>
 
-      <div class="errors" *ngIf="userForm.get('to_email').touched">
-        <small *ngIf="userForm.get('to_email').hasError('required')">
-          *გთხოვთ შეიყვანოთ ემაილი
-        </small>
-      </div>
-    </div>
+      <div class="form-group">
+        <label for="">პირადი ნომერი</label>
+        <input
+          type="number"
+          formControlName="id_number"
+          placeholder="00000000000"
+          />
 
-    <div class="form-group">
-      <label for="">პირადი ნომერი</label>
-      <input
-        type="number"
-        formControlName="id_number"
-        placeholder="00000000000"
-      />
+          @if (userForm.get('id_number').touched) {
+            <div class="errors">
+              @if (userForm.get('id_number').hasError('required')) {
+                <small>
+                  *გთხოვთ შეიყვანოთ პირადი ნომერი
+                </small>
+              }
+              @if (userForm.get('id_number').hasError('invalidIdNumber')) {
+                <small>
+                  *პირადი ნომერი უნდა შეიცავდეს 11 სიმბოლოს
+                </small>
+              }
+            </div>
+          }
+        </div>
+        <div class="form-group">
+          <label for="">გვარი</label>
+          <input formControlName="userSurname" type="text" />
 
-      <div class="errors" *ngIf="userForm.get('id_number').touched">
-        <small *ngIf="userForm.get('id_number').hasError('required')">
-          *გთხოვთ შეიყვანოთ პირადი ნომერი
-        </small>
-        <small *ngIf="userForm.get('id_number').hasError('invalidIdNumber')">
-          *პირადი ნომერი უნდა შეიცავდეს 11 სიმბოლოს
-        </small>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="">გვარი</label>
-      <input formControlName="userSurname" type="text" />
+          @if (userForm.get('userSurname').touched) {
+            <div class="errors">
+              @if (userForm.get('userSurname').hasError('required')) {
+                <small>
+                  *გთხოვთ შეიყვანოთ გვარი
+                </small>
+              }
+            </div>
+          }
+        </div>
 
-      <div class="errors" *ngIf="userForm.get('userSurname').touched">
-        <small *ngIf="userForm.get('userSurname').hasError('required')">
-          *გთხოვთ შეიყვანოთ გვარი
-        </small>
-      </div>
-    </div>
+        <div class="form-group">
+          <div style="display: flex; justify-content: space-between; width: 100%">
+            <label for="">აქტივაციის კოდი</label> <span>ვადა 30 წუთი</span>
+          </div>
+          <input formControlName="activation_code" type="number" />
+          @if (userForm.get('activation_code').touched) {
+            <div class="errors">
+              @if (userForm.get('activation_code').hasError('required')) {
+                <small>
+                  *გთხოვთ შეიყვანოთ აქტივაციის კოდი
+                </small>
+              }
+              @if (userForm.get('activation_code').hasError('minlength')) {
+                <small>
+                  *მინიმუმ 6 ციფრი
+                </small>
+              }
+            </div>
+          }
+        </div>
 
-    <div class="form-group">
-      <div style="display: flex; justify-content: space-between; width: 100%">
-        <label for="">აქტივაციის კოდი</label> <span>ვადა 30 წუთი</span>
-      </div>
-      <input formControlName="activation_code" type="number" />
-      <div class="errors" *ngIf="userForm.get('activation_code').touched">
-        <small *ngIf="userForm.get('activation_code').hasError('required')">
-          *გთხოვთ შეიყვანოთ აქტივაციის კოდი
-        </small>
-        <small *ngIf="userForm.get('activation_code').hasError('minlength')">
-          *მინიმუმ 6 ციფრი
-        </small>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="">პაროლი</label>
-      <input
-        type="password"
-        formControlName="password"
-        placeholder="( მინიმუმ 8 სიმბოლო : @ 7 , )"
-      />
-      <div class="errors" *ngIf="userForm.get('password').touched">
-        <small *ngIf="userForm.get('password').hasError('required')">
-          *გთხოვთ შეიყვანოთ პაროლი
-        </small>
-        <small *ngIf="userForm.get('password').hasError('minlength')">
-          *მინიმუმ 11 ციფრი
-        </small>
-      </div>
-    </div>
-  </div>
-  <button [disabled]="!userForm.valid" type="submit">რეგისტრაცია</button>
-</form>
+        <div class="form-group">
+          <label for="">პაროლი</label>
+          <input
+            type="password"
+            formControlName="password"
+            placeholder="( მინიმუმ 8 სიმბოლო : @ 7 , )"
+            />
+            @if (userForm.get('password').touched) {
+              <div class="errors">
+                @if (userForm.get('password').hasError('required')) {
+                  <small>
+                    *გთხოვთ შეიყვანოთ პაროლი
+                  </small>
+                }
+                @if (userForm.get('password').hasError('minlength')) {
+                  <small>
+                    *მინიმუმ 11 ციფრი
+                  </small>
+                }
+              </div>
+            }
+          </div>
+        </div>
+        <button [disabled]="!userForm.valid" type="submit">რეგისტრაცია</button>
+      </form>

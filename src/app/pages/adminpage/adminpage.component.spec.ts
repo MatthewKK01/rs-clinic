@@ -8,8 +8,8 @@ describe('AdminpageComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [AdminpageComponent]
-    });
+    imports: [AdminpageComponent]
+});
     fixture = TestBed.createComponent(AdminpageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

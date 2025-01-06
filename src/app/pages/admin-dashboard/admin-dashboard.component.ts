@@ -6,9 +6,10 @@ import { DoctorsService } from 'src/app/services/doctors.service';
 
 
 @Component({
-  selector: 'app-admin-dashboard',
-  templateUrl: './admin-dashboard.component.html',
-  styleUrls: ['./admin-dashboard.component.scss']
+    selector: 'app-admin-dashboard',
+    templateUrl: './admin-dashboard.component.html',
+    styleUrls: ['./admin-dashboard.component.scss'],
+    standalone: true
 })
 export class AdminDashboardComponent implements OnInit {
   public docData!: IDoctors[]
