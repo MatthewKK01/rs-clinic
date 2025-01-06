@@ -1,13 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { UserService } from './services/user.service';
 import { IUser } from './models/iuser';
 import { DoctorsService } from './services/doctors.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    standalone: true,
+    imports: [RouterLink, RouterLinkActive, ReactiveFormsModule, RouterOutlet]
 })
 export class AppComponent implements OnInit {
   title = 'rs-clinic';
@@ -21,10 +24,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._user.userData$.subscribe(({
-      next: res => this.userData = res,
-      error: err => console.log(err)
-    }))
+
   }
 
   openModal(): void {
@@ -51,9 +51,7 @@ export class AppComponent implements OnInit {
       this.router.navigate([routePath], { relativeTo: this.route });
     }
   }
-  updateSearchCriteria() {
-    this._doc.setSearchCriteria(this.name, this.category);
-  }
+
 
 
 }

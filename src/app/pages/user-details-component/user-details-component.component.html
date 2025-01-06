@@ -1,0 +1,163 @@
+<section class="wrapper" style="display: flex; gap: 42px; align-items: start">
+  <app-categories-list></app-categories-list>
+  <div class="user-info">
+    <div style="text-align: center">
+      <img src="../../../assets/user.jpg" alt="" />
+      <h2>{{ userData.name }} {{ userData.surname }}</h2>
+      <span>{{ userData?.category }}</span>
+      <br />
+      <span>{{ userData?.rating }}</span>
+    </div>
+    <div class="d-flex">
+      <p>
+        პირადი ნომერი : <br />
+        <span>{{ userData.id_number }}</span>
+      </p>
+      <p>
+        Email : <br />
+        <span>{{ userData.email }}</span>
+      </p>
+      <p>პაროლის შეცვლა</p>
+      <p>ჩემი ჯავშანი: <span>(11)</span></p>
+    </div>
+  </div>
+  <div style="display: flex; flex-direction: column">
+    <table>
+      <thead>
+        <tr>
+          <th
+            style="
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              gap: 6px;
+            "
+          >
+            <div class="arrow_btn">
+              <img
+                src="../../../assets/arrow.svg"
+                style="transform: rotate(180deg)"
+                alt=""
+              />
+            </div>
+            <div class="arrow_btn"><img src="../../../assets/arrow.svg" alt="" /></div>
+          </th>
+          <th><span>17</span> ( ორშ )</th>
+          <th><span>17</span> ( სამ )</th>
+          <th><span>17</span> ( ოთხ )</th>
+          <th><span>17</span> ( ხუთ )</th>
+          <th><span>17</span> ( პარ )</th>
+          <th><span>17</span> ( შაბ )</th>
+          <th><span>17</span> ( კვი )</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>9:00 - 10:00</td>
+          <td class="checked">
+            ჩემი <br />
+            ჯავშანი <span class="cancel">&#10005;</span>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="bg-yellow"></td>
+          <td class="bg-yellow"></td>
+        </tr>
+        <tr>
+          <td>10:00 - 11:00</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="bg-yellow"></td>
+          <td class="bg-yellow"></td>
+        </tr>
+        <tr>
+          <td>11:00 - 12:00</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="bg-yellow"></td>
+          <td class="bg-yellow"></td>
+        </tr>
+        <tr>
+          <td>12:00 - 13:00</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="bg-yellow"></td>
+          <td class="bg-yellow"></td>
+        </tr>
+        <tr>
+          <td>13:00 - 14:00</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="checked">
+            ჩემი <br />
+            ჯავშანი <span class="cancel">&#10005;</span>
+          </td>
+          <td class="bg-yellow"></td>
+          <td class="bg-yellow"></td>
+        </tr>
+        <tr>
+          <td>14:00 - 15:00</td>
+          <td></td>
+          <td></td>
+          <td></td>
+
+          <td></td>
+          <td></td>
+          <td class="bg-yellow"></td>
+          <td class="bg-yellow"></td>
+        </tr>
+        <tr>
+          <td>14:00 - 15:00</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="bg-yellow"></td>
+          <td class="bg-yellow"></td>
+        </tr>
+        <tr>
+          <td>15:00 - 16:00</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="bg-yellow"></td>
+          <td class="bg-yellow"></td>
+        </tr>
+        <tr>
+          <td>16:00 - 17:00</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="bg-yellow"></td>
+          <td class="bg-yellow"></td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="display: flex; justify-content: end">
+      <button class="edit">
+        <img src="../../../assets/pencil.svg" alt="" /> რედაქტირება
+      </button>
+      <button class="delete">
+        <img src="../../../assets/delete.svg" alt="" />წაშლა
+      </button>
+    </div>
+  </div>
+</section>

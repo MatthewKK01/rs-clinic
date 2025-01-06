@@ -1,0 +1,39 @@
+<h1>კატეგორიები</h1>
+<table>
+  <thead>
+    <tr>
+      <th style="padding-left: 34px">სახელი</th>
+      <th>კატეგორია</th>
+      <th style="text-align: center">ფოტოსურათი</th>
+      <th style="text-align: center">რეიტინგი</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (doctor of docData; track doctor) {
+      <tr>
+        <td style="text-align: start; padding-left: 34px">
+          {{ doctor.name }} {{ doctor.surname }}
+        </td>
+        <td>{{ doctor.category }}</td>
+        <td style="text-align: center">
+          <img [src]="doctor.image" alt="Doctor Photo" height="38" />
+        </td>
+        <td>
+          <div class="rating">
+          </div>
+        </td>
+        <td class="buttons">
+          <button style="background-color: #dafaee" (click)="editDoctor(doctor)">
+            <img src="/src/assets/edit.svg" class="action_button" alt="" />
+          </button>
+          <button
+            style="background-color: #ff93a6"
+            >
+            <img src="/src/assets/delete.svg" class="action_button" alt="" />
+          </button>
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>

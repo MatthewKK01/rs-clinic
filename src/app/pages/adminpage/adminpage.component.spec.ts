@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ModalComponent } from './modal.component';
+import { AdminpageComponent } from './adminpage.component';
 
-describe('ModalComponent', () => {
-  let component: ModalComponent;
-  let fixture: ComponentFixture<ModalComponent>;
+describe('AdminpageComponent', () => {
+  let component: AdminpageComponent;
+  let fixture: ComponentFixture<AdminpageComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [ModalComponent]
+    imports: [AdminpageComponent]
 });
-    fixture = TestBed.createComponent(ModalComponent);
+    fixture = TestBed.createComponent(AdminpageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
